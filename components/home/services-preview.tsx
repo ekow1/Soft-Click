@@ -59,17 +59,17 @@ export function ServicesPreview() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((service, index) => (
-          <Card key={index} className="group border-none shadow-sm hover:shadow-xl transition-all duration-300 bg-white">
+          <Card key={index} className="group border-none shadow-sm hover:shadow-xl transition-all duration-300 bg-card">
             <CardHeader>
-              <div className="bg-slate-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300 border border-slate-100">
-                <service.icon className="w-6 h-6 text-primary group-hover:text-white transition-colors" />
+              <div className="bg-muted w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300 border border-border">
+                <service.icon className="w-6 h-6 text-primary group-hover:text-primary-foreground transition-colors" />
               </div>
-              <CardTitle className="text-xl font-bold tracking-tight text-slate-900 group-hover:text-primary transition-colors">
+              <CardTitle className="text-xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
                 {service.title}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-slate-600 leading-relaxed text-sm md:text-base">
+              <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
                 {service.description}
               </p>
             </CardContent>

@@ -31,10 +31,10 @@ export function WhyChooseUs() {
     <SectionWrapper background="background">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div>
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-black tracking-tight text-slate-900 leading-[1.1] mb-6">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-black tracking-tight text-foreground leading-[1.1] mb-6">
             Why Forward-thinking Leaders Choose Us
           </h2>
-          <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-lg leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
             At SoftClick Solutions, we bridge the gap between complex business challenges and elegant, powerful technology solutions. We deliver results that drive real growth.
           </p>
           <div className="hidden lg:block w-32 h-2 bg-primary mt-12 rounded-none" />
@@ -43,11 +43,11 @@ export function WhyChooseUs() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <div key={index} className="flex flex-col space-y-4">
-              <div className="bg-slate-50 w-16 h-16 rounded-none flex items-center justify-center text-primary border border-slate-100 shadow-sm transition-transform hover:scale-105 duration-300">
+              <div className="bg-muted w-16 h-16 rounded-none flex items-center justify-center text-primary border border-border shadow-sm transition-transform hover:scale-105 duration-300">
                 <feature.icon className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900">{feature.title}</h3>
-              <p className="text-slate-600 leading-relaxed max-w-sm">
+              <h3 className="text-xl font-bold text-foreground">{feature.title}</h3>
+              <p className="text-muted-foreground leading-relaxed max-w-sm">
                 {feature.description}
               </p>
             </div>

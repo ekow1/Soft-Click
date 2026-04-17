@@ -103,21 +103,21 @@
 }
 
 .dark {
-    --background: oklch(0.15 0.01 260);
+    --background: oklch(0.12 0.02 260); /* Deeper Midnight Navy */
     --foreground: oklch(0.98 0.01 260);
-    --card: oklch(0.2 0.02 260);
+    --card: oklch(0.16 0.03 260);
     --card-foreground: oklch(0.98 0.01 260);
-    --popover: oklch(0.2 0.02 260);
+    --popover: oklch(0.16 0.03 260);
     --popover-foreground: oklch(0.98 0.01 260);
     
-    --primary: oklch(0.3 0.1 260);
+    --primary: oklch(0.35 0.1 260);
     --primary-foreground: oklch(0.98 0.01 260);
     
-    --secondary: oklch(0.25 0.05 260);
+    --secondary: oklch(0.2 0.05 260);
     --secondary-foreground: oklch(0.98 0.01 260);
     
-    --muted: oklch(0.25 0.05 260);
-    --muted-foreground: oklch(0.7 0.03 260);
+    --muted: oklch(0.2 0.05 260);
+    --muted-foreground: oklch(0.6 0.03 260);
     
     --accent: oklch(0.85 0.15 85);
     --accent-foreground: oklch(0.15 0.05 85);
@@ -125,9 +125,9 @@
     --destructive: oklch(0.45 0.2 25);
     --destructive-foreground: oklch(0.98 0 0);
     
-    --border: oklch(0.25 0.05 260);
-    --input: oklch(0.25 0.05 260);
-    --ring: oklch(0.3 0.1 260);
+    --border: oklch(0.2 0.05 260);
+    --input: oklch(0.2 0.05 260);
+    --ring: oklch(0.35 0.1 260);
     
     --chart-1: oklch(0.5 0.2 28);
     --chart-2: oklch(0.6 0.15 175);
@@ -135,22 +135,22 @@
     --chart-4: oklch(0.85 0.15 85);
     --chart-5: oklch(0.7 0.2 60);
 
-    --sidebar: oklch(0.2 0.02 260);
+    --sidebar: oklch(0.14 0.02 260);
     --sidebar-foreground: oklch(0.98 0.01 260);
     --sidebar-primary: oklch(0.3 0.1 260);
     --sidebar-primary-foreground: oklch(0.98 0.01 260);
-    --sidebar-accent: oklch(0.25 0.05 260);
+    --sidebar-accent: oklch(0.2 0.05 260);
     --sidebar-accent-foreground: oklch(0.98 0.01 260);
-    --sidebar-border: oklch(0.25 0.05 260);
+    --sidebar-border: oklch(0.2 0.05 260);
     --sidebar-ring: oklch(0.3 0.1 260);
 }
 
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 transition-colors duration-300;
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans transition-colors duration-500;
   }
 }

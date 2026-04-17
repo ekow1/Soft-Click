@@ -29,13 +29,13 @@ export function FloatingChat() {
           href="https://wa.me/233551234567" // Placeholder number
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 transition-all group flex items-center gap-4 px-5 py-3 shadow-2xl"
+          className="bg-card hover:bg-muted text-foreground border border-border transition-all group flex items-center gap-4 px-5 py-3 shadow-2xl"
         >
           <div className="bg-green-500 rounded-none flex items-center justify-center text-white group-hover:scale-110 transition-transform w-10 h-10">
             <MessageSquare className="w-5 h-5" />
           </div>
           <div className="flex flex-col font-mono">
-            <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 leading-none mb-1">Human Support</span>
+            <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground leading-none mb-1">Human Support</span>
             <span className="text-sm font-bold">WhatsApp Chat</span>
           </div>
         </a>
@@ -70,7 +70,7 @@ export function FloatingChat() {
         className={cn(
           "w-16 h-16 rounded-none flex items-center justify-center shadow-2xl transition-all duration-500 hover:scale-110 active:scale-95 border-2",
           isOpen || isAiChatOpen
-            ? "bg-white border-slate-200 text-slate-900 rotate-90" 
+            ? "bg-card border-border text-foreground rotate-90" 
             : "bg-accent border-accent text-accent-foreground"
         )}
       >

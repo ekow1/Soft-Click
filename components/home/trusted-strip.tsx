@@ -19,9 +19,9 @@ const row2Logos = [
 
 export function TrustedStrip() {
   return (
-    <section className="w-full bg-white py-10 md:py-14 overflow-hidden border-y border-slate-100">
+    <section className="w-full bg-background py-10 md:py-14 overflow-hidden border-y border-border">
       <div className="container mx-auto px-4 mb-16 text-center max-w-5xl">
-        <h2 className="text-slate-900 text-2xl md:text-4xl lg:text-5xl font-black tracking-tight leading-[1.1]">
+        <h2 className="text-foreground text-2xl md:text-4xl lg:text-5xl font-black tracking-tight leading-[1.1]">
           Trusted by 5,000+ Global Leaders
         </h2>
       </div>
@@ -33,8 +33,8 @@ export function TrustedStrip() {
             <div key={i} className="flex gap-14 md:gap-20 items-center shrink-0 px-6 md:px-10">
               {row1Logos.map((logo, index) => (
                 <div key={index} className="flex items-center gap-2.5 opacity-60 hover:opacity-100 transition-opacity cursor-default">
-                  <logo.icon className="w-5 h-5 md:w-6 md:h-6 text-slate-900" />
-                  <span className="text-slate-900 text-lg md:text-xl font-black tracking-tight">{logo.name}</span>
+                  <logo.icon className="w-5 h-5 md:w-6 md:h-6 text-foreground" />
+                  <span className="text-foreground text-lg md:text-xl font-black tracking-tight">{logo.name}</span>
                 </div>
               ))}
             </div>
@@ -47,8 +47,8 @@ export function TrustedStrip() {
             <div key={i} className="flex gap-14 md:gap-20 items-center shrink-0 px-6 md:px-10">
               {row2Logos.map((logo, index) => (
                 <div key={index} className="flex items-center gap-2.5 opacity-60 hover:opacity-100 transition-opacity cursor-default">
-                  <logo.icon className="w-5 h-5 md:w-6 md:h-6 text-slate-900" />
-                  <span className="text-slate-900 text-lg md:text-xl font-black tracking-tight">{logo.name}</span>
+                  <logo.icon className="w-5 h-5 md:w-6 md:h-6 text-foreground" />
+                  <span className="text-foreground text-lg md:text-xl font-black tracking-tight">{logo.name}</span>
                 </div>
               ))}
             </div>

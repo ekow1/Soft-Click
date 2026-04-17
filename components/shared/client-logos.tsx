@@ -17,9 +17,9 @@ export function ClientLogos({ className, title }: ClientLogosProps) {
   ]
 
   return (
-    <div className={cn("py-12 md:py-16 text-center border-t border-slate-100", className)}>
+    <div className={cn("py-12 md:py-16 text-center border-t border-border", className)}>
       {title && (
-        <h3 className="text-sm md:text-base font-semibold text-slate-500 uppercase tracking-widest mb-10 md:mb-12">
+        <h3 className="text-sm md:text-base font-semibold text-muted-foreground uppercase tracking-widest mb-10 md:mb-12">
           {title}
         </h3>
       )}
@@ -27,7 +27,7 @@ export function ClientLogos({ className, title }: ClientLogosProps) {
         {logos.map((logo, index) => (
           <div
             key={index}
-            className="flex items-center justify-center p-4 h-16 w-32 md:w-40 border border-slate-200 rounded text-slate-400 font-bold bg-slate-50 hover:bg-white hover:text-primary transition-colors cursor-pointer"
+            className="flex items-center justify-center p-4 h-16 w-32 md:w-40 border border-border rounded text-muted-foreground font-bold bg-muted hover:bg-background hover:text-primary transition-colors cursor-pointer"
           >
             {logo.name}
           </div>

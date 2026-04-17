@@ -56,14 +56,14 @@ export function PartnerSection() {
   }, [])
 
   return (
-    <SectionWrapper background="background" padding="xl" className="bg-white">
+    <SectionWrapper background="background" padding="xl" className="bg-background">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16 md:mb-24 flex flex-col items-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-slate-900 leading-[0.95] max-w-4xl mb-8">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black tracking-tighter text-foreground leading-[0.95] max-w-4xl mb-8">
             What makes us the right partner
           </h2>
-          <p className="text-slate-600 text-base md:text-lg max-w-2xl leading-relaxed font-medium">
+          <p className="text-muted-foreground text-base md:text-lg max-w-2xl leading-relaxed font-medium">
             Choosing the right consulting partner can define the future of your business. 
             At SoftClick, we don't just advise — we collaborate, innovate, and deliver.
           </p>

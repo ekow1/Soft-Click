@@ -33,7 +33,7 @@ export function FaqSection() {
   const [openIndex, setOpenIndex] = React.useState<number | null>(0)
 
   return (
-    <SectionWrapper background="background" padding="xl" className="bg-white">
+    <SectionWrapper background="background" padding="xl" className="bg-background">
       <div className="max-w-4xl mx-auto px-4">
         <SectionHeading 
           title="Frequently Asked Questions"
@@ -49,8 +49,8 @@ export function FaqSection() {
               <div 
                 key={idx}
                 className={cn(
-                  "border border-slate-200 transition-all duration-300",
-                  isOpen ? "bg-slate-50 border-slate-300 shadow-sm" : "hover:border-slate-300 bg-white"
+                  "border border-border transition-all duration-300",
+                  isOpen ? "bg-muted border-slate-300 dark:border-accent/30 shadow-sm" : "hover:border-accent/40 bg-card"
                 )}
               >
                 <button
@@ -59,13 +59,13 @@ export function FaqSection() {
                 >
                   <span className={cn(
                     "text-lg md:text-xl font-black tracking-tight font-mono transition-colors",
-                    isOpen ? "text-slate-950" : "text-slate-600 group-hover:text-slate-900"
+                    isOpen ? "text-foreground" : "text-muted-foreground group-hover:text-foreground"
                   )}>
                     {faq.question}
                   </span>
                   <div className={cn(
                     "shrink-0 w-8 h-8 flex items-center justify-center border transition-all duration-300",
-                    isOpen ? "bg-slate-950 border-slate-950 text-white" : "border-slate-200 text-slate-400 group-hover:border-slate-400 group-hover:text-slate-600"
+                    isOpen ? "bg-accent border-accent text-accent-foreground" : "border-border text-muted-foreground group-hover:border-accent group-hover:text-accent"
                   )}>
                     {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                   </div>
@@ -76,7 +76,7 @@ export function FaqSection() {
                   isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                 )}>
                   <div className="overflow-hidden">
-                    <div className="px-6 md:px-8 pb-8 text-slate-600 leading-relaxed text-base md:text-lg">
+                    <div className="px-6 md:px-8 pb-8 text-muted-foreground leading-relaxed text-base md:text-lg">
                       {faq.answer}
                     </div>
                   </div>
