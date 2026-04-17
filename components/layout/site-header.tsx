@@ -21,7 +21,7 @@ const navigation = [
   { name: "Projects", href: "/projects" },
 ]
 
-import { ThemeToggle } from "@/components/shared/theme-toggle"
+
 
 export function SiteHeader() {
   const pathname = usePathname()
@@ -93,15 +93,8 @@ export function SiteHeader() {
           </div>
         </nav>
 
-        {/* Right: Pill Button, Toggle & Mobile Toggle */}
+        {/* Right: Pill Button & Mobile Toggle */}
         <div className="flex items-center gap-4">
-          <ThemeToggle 
-            isTransparent={isTransparent}
-            className={cn(
-              "rounded-none w-11 h-11 transition-all duration-500",
-              isTransparent ? "text-white hover:bg-white/10" : "text-muted-foreground hover:text-foreground hover:bg-muted"
-            )} 
-          />
           
           <Button asChild variant="outline" className={cn(
             "hidden md:inline-flex rounded-none px-8 h-11 transition-all duration-500 border font-bold text-xs tracking-widest uppercase",

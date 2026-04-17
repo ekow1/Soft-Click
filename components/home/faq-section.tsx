@@ -50,7 +50,7 @@ export function FaqSection() {
                 key={idx}
                 className={cn(
                   "border border-border transition-all duration-300",
-                  isOpen ? "bg-muted border-slate-300 dark:border-accent/30 shadow-sm" : "hover:border-accent/40 bg-card"
+                  isOpen ? "bg-accent/[0.03] border-accent/20 shadow-sm" : "hover:border-accent/40 bg-card"
                 )}
               >
                 <button

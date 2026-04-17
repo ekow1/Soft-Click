@@ -55,7 +55,7 @@ export function HomeHeroSection() {
 
            {/* Bottom Right: High-Contrast CTA */}
            <div className="shrink-0 flex flex-col sm:flex-row items-center gap-4 lg:gap-6">
-             <Button asChild size="lg" variant="outline" className="group relative overflow-hidden  rounded-none px-8 h-12 md:h-14  hover:bg-white text-accent-foreground hover:text-slate-950 font-black text-sm md:text-base transition-all shadow-xl hover:scale-105 active:scale-95 border-b-2 border-black/10 w-full sm:w-auto">
+             <Button asChild size="lg" variant="outline" className="group relative overflow-hidden rounded-none px-8 h-12 md:h-14 hover:bg-white text-accent-foreground hover:text-primary-foreground font-black text-sm md:text-base transition-all shadow-xl hover:scale-105 active:scale-95 border-b-2 border-black/10 w-full sm:w-auto">
                <Link href="/services" className="flex items-center gap-3">
                  Explore our services
                  <div className="w-5 h-5 rounded-none bg-black/5 flex items-center justify-center group-hover:translate-x-1 transition-transform">
@@ -64,7 +64,7 @@ export function HomeHeroSection() {
                </Link>
              </Button>
 
-             <Button asChild size="lg" variant="outline" className="group relative overflow-hidden rounded-none px-8 h-12 md:h-14 bg-transparent hover:bg-white text-white hover:text-slate-950 font-black text-sm md:text-base border-white/20 transition-all hover:scale-105 active:scale-95 w-full sm:w-auto">
+             <Button asChild size="lg" variant="outline" className="group relative overflow-hidden rounded-none px-8 h-12 md:h-14 bg-transparent hover:bg-white text-white hover:text-primary-foreground font-black text-sm md:text-base border-white/20 transition-all hover:scale-105 active:scale-95 w-full sm:w-auto">
                <Link href="/about" className="flex items-center gap-3">
                  Learn more about us
                  <div className="w-5 h-5 rounded-none bg-white/5 flex items-center justify-center group-hover:translate-x-1 transition-transform">

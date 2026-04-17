@@ -92,7 +92,7 @@ export function AboutPreview() {
             
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-foreground leading-[0.95] mb-8">
               Engineering the Future <br />
-              <span className="dark:text-slate-500 text-slate-400 italic font-medium">of African Business.</span>
+              <span className="text-muted-foreground italic font-medium">of African Business.</span>
             </h2>
 
             <p className="text-muted-foreground text-lg md:text-xl font-medium leading-relaxed mb-10 max-w-xl">
