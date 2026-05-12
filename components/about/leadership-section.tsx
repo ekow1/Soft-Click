@@ -1,9 +1,6 @@
 import * as React from "react"
 import { Globe, Mail } from "lucide-react"
 
-import { SectionHeading } from "@/components/shared/section-heading"
-import { SectionWrapper } from "@/components/layout/section-wrapper"
-
 const leaders = [
   {
     name: "John K. Appiah",
@@ -29,46 +26,68 @@ const leaders = [
 
 export function LeadershipSection() {
   return (
-    <SectionWrapper background="muted">
-      <SectionHeading
-        title="Executive Leadership"
-        subheading="Guiding our vision with decades of enterprise tech experience."
-        align="center"
-        className="mb-16"
-      />
+    <section className="w-full bg-muted/30 border-b-2 border-border">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 py-20 md:py-28">
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {leaders.map((leader, index) => (
-          <div key={index} className="group relative">
-            <div className="aspect-[3/4] bg-slate-200 border border-slate-100 rounded-3xl overflow-hidden mb-6 relative shadow-md">
-              <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-mono tracking-widest text-xs text-center p-4">
-                {leader.image}
-              </div>
-              <div className="absolute inset-0 bg-primary/80 flex items-end opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="flex justify-center w-full gap-4 pb-8 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <a href="#" className="bg-white text-primary p-3 rounded-full hover:bg-accent transition-colors shadow-lg">
-                    <Globe className="w-5 h-5" />
+        {/* Section Header */}
+        <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 mb-16 lg:mb-20">
+          <div className="col-span-12 lg:col-span-3 flex items-center gap-4">
+            <span className="swiss-label text-accent">04 — Leadership</span>
+            <span className="h-px flex-1 bg-border" />
+          </div>
+          <div className="col-span-12 lg:col-span-9">
+            <h2 className="swiss-headline text-foreground text-4xl md:text-5xl lg:text-6xl mb-6">
+              Executive <span className="text-muted-foreground">leadership.</span>
+            </h2>
+            <p className="swiss-body text-muted-foreground text-base md:text-lg max-w-2xl">
+              Guiding our vision with decades of enterprise technology experience.
+            </p>
+          </div>
+        </div>
+
+        {/* Leaders Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-l-2 border-t-2 border-border">
+          {leaders.map((leader, index) => (
+            <div key={index} className="group relative border-r-2 border-b-2 border-border bg-background">
+              {/* Image */}
+              <div className="relative aspect-[3/4] bg-muted overflow-hidden">
+                <div className="absolute inset-0 swiss-dots opacity-30" />
+                <div className="absolute inset-0 flex items-center justify-center swiss-label text-muted-foreground text-center p-4">
+                  {leader.image}
+                </div>
+
+                {/* Number badge */}
+                <div className="absolute top-0 left-0 bg-foreground text-background w-10 h-10 flex items-center justify-center swiss-label">
+                  0{index + 1}
+                </div>
+
+                {/* Hover overlay with socials */}
+                <div className="absolute inset-0 bg-foreground/90 flex items-end justify-start p-4 gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-150">
+                  <a href="#" className="w-10 h-10 swiss-border-thick border-background bg-transparent text-background flex items-center justify-center hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-150">
+                    <Globe className="w-4 h-4" />
                     <span className="sr-only">Network</span>
                   </a>
-                  <a href="#" className="bg-white text-primary p-3 rounded-full hover:bg-accent transition-colors shadow-lg">
-                    <Mail className="w-5 h-5" />
+                  <a href="#" className="w-10 h-10 swiss-border-thick border-background bg-transparent text-background flex items-center justify-center hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-150">
+                    <Mail className="w-4 h-4" />
                     <span className="sr-only">Email</span>
                   </a>
                 </div>
               </div>
+
+              {/* Info */}
+              <div className="p-6 border-t-2 border-border">
+                <h3 className="swiss-headline text-foreground text-lg md:text-xl mb-2">
+                  {leader.name}
+                </h3>
+                <p className="swiss-label text-accent">
+                  {leader.role}
+                </p>
+              </div>
             </div>
-            <div className="text-center">
-              <h3 className="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors tracking-tight">
-                {leader.name}
-              </h3>
-              <p className="text-slate-500 font-medium text-sm tracking-wide uppercase mt-1">
-                {leader.role}
-              </p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </SectionWrapper>
+    </section>
   )
 }
 

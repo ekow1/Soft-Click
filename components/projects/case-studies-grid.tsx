@@ -2,11 +2,6 @@ import * as React from "react"
 import Link from "next/link"
 import { ArrowRight, Download } from "lucide-react"
 
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { SectionWrapper } from "@/components/layout/section-wrapper"
-
 const caseStudies = [
   {
     title: "Digital Payment Gateway",
@@ -48,75 +43,104 @@ const caseStudies = [
 
 export function CaseStudiesGrid() {
   return (
-    <SectionWrapper background="background">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-7xl mx-auto border-t pt-16 mt-8 border-slate-100">
-        {caseStudies.map((study, index) => (
-          <Card key={index} className="flex flex-col h-full border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-white group overflow-hidden rounded-3xl">
-             <div className="h-64 bg-slate-100 flex items-center justify-center border-b border-slate-100 overflow-hidden relative">
-              <div className="absolute inset-0 bg-primary/5 transition-colors group-hover:bg-primary/10" />
-              <div className="w-24 h-24 rounded-full border border-primary/20 flex flex-col items-center justify-center gap-2 group-hover:scale-110 transition-transform duration-500 bg-white shadow-sm z-10">
-                <span className="font-bold text-slate-800 tracking-wider">PROJECT</span>
-                <span className="text-xs text-primary font-mono">{index + 1}</span>
-              </div>
-            </div>
-            
-            <div className="flex-1 flex flex-col p-8 lg:p-10">
-              <CardHeader className="p-0 mb-6 flex-row gap-4 justify-between items-start">
-                <div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <Badge variant="outline" className="text-primary border-primary/30">
-                      {study.industry}
-                    </Badge>
+    <section className="w-full bg-background border-b-2 border-border">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 py-20 md:py-28">
+
+        {/* Section Header */}
+        <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 mb-16 lg:mb-20">
+          <div className="col-span-12 lg:col-span-3 flex items-center gap-4">
+            <span className="swiss-label text-accent">01 — Case Studies</span>
+            <span className="h-px flex-1 bg-border" />
+          </div>
+          <div className="col-span-12 lg:col-span-9">
+            <h2 className="swiss-headline text-foreground text-4xl md:text-5xl lg:text-6xl mb-6">
+              Proven <span className="text-muted-foreground">pedigree.</span>
+            </h2>
+            <p className="swiss-body text-muted-foreground text-base md:text-lg max-w-2xl">
+              Explore how SoftClick Solutions has architected and delivered transformative technology for Africa's leading organizations.
+            </p>
+          </div>
+        </div>
+
+        {/* Case Studies Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 border-l-2 border-t-2 border-border mb-20">
+          {caseStudies.map((study, index) => (
+            <div
+              key={index}
+              className="group border-r-2 border-b-2 border-border transition-all duration-150 ease-linear hover:bg-foreground hover:text-background"
+            >
+              {/* Top visual */}
+              <div className="h-48 bg-muted/40 border-b-2 border-border relative overflow-hidden group-hover:border-background/20 transition-colors duration-150">
+                <div className="absolute inset-0 swiss-dots opacity-30" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="bg-foreground text-background swiss-border-thick border-foreground px-6 py-4 swiss-label">
+                    PROJECT 0{index + 1}
                   </div>
-                  <CardTitle className="text-2xl font-bold tracking-tight text-slate-900 group-hover:text-primary transition-colors">
-                    {study.title}
-                  </CardTitle>
                 </div>
-              </CardHeader>
-              <CardContent className="p-0 flex-1 space-y-6">
-                <div>
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-2">The Challenge</h4>
-                  <p className="text-slate-600 leading-relaxed text-sm">
-                    {study.challenge}
-                  </p>
+              </div>
+
+              {/* Content */}
+              <div className="p-8 md:p-10">
+                <div className="swiss-label text-accent mb-3">{study.industry}</div>
+                <h3 className="swiss-headline text-foreground group-hover:text-background text-2xl md:text-3xl mb-6 transition-colors duration-150">
+                  {study.title}
+                </h3>
+
+                <div className="space-y-6 mb-8">
+                  <div>
+                    <div className="swiss-label text-muted-foreground group-hover:text-background/60 mb-2">Challenge</div>
+                    <p className="swiss-body text-foreground group-hover:text-background/80 text-sm leading-relaxed transition-colors duration-150">
+                      {study.challenge}
+                    </p>
+                  </div>
+                  <div>
+                    <div className="swiss-label text-muted-foreground group-hover:text-background/60 mb-2">Solution</div>
+                    <p className="swiss-body text-foreground group-hover:text-background/80 text-sm leading-relaxed transition-colors duration-150">
+                      {study.solution}
+                    </p>
+                  </div>
+                  <div className="p-4 swiss-border-thick border-border group-hover:border-accent transition-colors duration-150">
+                    <div className="swiss-label text-accent mb-2">Impact</div>
+                    <p className="swiss-body text-foreground group-hover:text-background text-sm font-medium transition-colors duration-150">
+                      {study.impact}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-slate-400 mb-2">Our Solution</h4>
-                  <p className="text-slate-600 leading-relaxed text-sm">
-                    {study.solution}
-                  </p>
-                </div>
-                <div className="bg-primary/5 p-4 rounded-xl border border-primary/10">
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-primary mb-1">Business Impact</h4>
-                  <p className="text-slate-800 font-medium">
-                    {study.impact}
-                  </p>
-                </div>
-              </CardContent>
-              <CardFooter className="p-0 mt-8">
-                <div className="flex w-full items-center justify-between border-t border-slate-100 pt-6">
-                  <span className="text-sm text-slate-500 font-medium">{study.client}</span>
+
+                <div className="flex items-center justify-between pt-6 border-t-2 border-border group-hover:border-background/20 transition-colors duration-150">
+                  <span className="swiss-label text-muted-foreground group-hover:text-background/60">{study.client}</span>
                   <Link
                     href={study.href}
-                    className="inline-flex items-center text-sm font-bold text-slate-900 hover:text-primary transition-colors group/link px-4 py-2 border border-slate-200 rounded-lg shadow-sm hover:shadow"
+                    className="inline-flex items-center gap-3 swiss-label text-accent"
                   >
                     Full Study
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
-              </CardFooter>
+              </div>
             </div>
-          </Card>
-        ))}
+          ))}
+        </div>
+
+        {/* Download CTA */}
+        <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 items-center border-t-2 border-border pt-16">
+          <div className="col-span-12 lg:col-span-3 flex items-center gap-4">
+            <span className="swiss-label text-accent">02 — Resources</span>
+            <span className="h-px flex-1 bg-border" />
+          </div>
+          <div className="col-span-12 lg:col-span-6">
+            <h3 className="swiss-headline text-foreground text-2xl md:text-3xl">
+              Need a detailed capability statement?
+            </h3>
+          </div>
+          <div className="col-span-12 lg:col-span-3">
+            <button className="group w-full h-14 swiss-border-thick bg-foreground text-background border-foreground hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-150 ease-linear flex items-center justify-center gap-3 swiss-label">
+              <Download className="h-4 w-4" />
+              Download Corporate Profile
+            </button>
+          </div>
+        </div>
       </div>
-      
-      <div className="mt-20 text-center flex flex-col items-center">
-        <h3 className="text-2xl font-bold text-slate-900 mb-6">Need a detailed capability statement?</h3>
-        <Button variant="outline" size="lg" className="rounded-full px-8 h-12">
-          <Download className="mr-2 h-4 w-4" />
-          Download Corporate Profile
-        </Button>
-      </div>
-    </SectionWrapper>
+    </section>
   )
 }

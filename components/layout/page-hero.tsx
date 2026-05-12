@@ -6,6 +6,8 @@ export interface PageHeroProps {
   description?: string
   className?: string
   align?: "left" | "center"
+  sectionNumber?: string
+  sectionLabel?: string
 }
 
 export function PageHero({
@@ -13,32 +15,53 @@ export function PageHero({
   description,
   className,
   align = "left",
+  sectionNumber = "00",
+  sectionLabel = "Page",
 }: PageHeroProps) {
   return (
-    <div
+    <section
       className={cn(
-        "w-full bg-slate-50 py-16 md:py-24 lg:py-32 border-b relative overflow-hidden",
+        "relative w-full bg-[#020617] text-white overflow-hidden border-b-2 border-white/10 swiss-noise",
         className
       )}
     >
-      {/* Decorative subtle background pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:16px_16px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_70%,transparent_100%)]pointer-events-none" />
-      
-      <div
-        className={cn(
-          "container mx-auto px-4 md:px-6 relative z-10",
-          align === "center" && "text-center flex flex-col items-center"
-        )}
-      >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-slate-950 max-w-4xl">
-          {title}
-        </h1>
-        {description && (
-          <p className="mt-6 text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
-            {description}
-          </p>
-        )}
+      {/* Swiss Grid Pattern */}
+      <div className="absolute inset-0 swiss-grid-pattern opacity-[0.04] pointer-events-none" />
+      {/* Accent glow */}
+      <div className="absolute top-1/2 left-[-10%] w-[60%] h-[80%] bg-accent/10 blur-[120px] -translate-y-1/2 pointer-events-none" />
+
+      <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-12 pt-40 pb-20 md:pt-48 md:pb-28">
+        <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8">
+
+          {/* Section number */}
+          <div className={cn(
+            "col-span-12 lg:col-span-3 flex items-center gap-4 mb-8 lg:mb-0",
+            align === "center" && "lg:col-span-12 lg:justify-center"
+          )}>
+            <span className="swiss-label text-accent">{sectionNumber} — {sectionLabel}</span>
+            <span className={cn("h-px bg-white/20", align === "center" ? "w-24" : "flex-1")} />
+          </div>
+
+          {/* Headline + Description */}
+          <div className={cn(
+            "col-span-12 lg:col-span-9",
+            align === "center" && "lg:col-span-12 text-center flex flex-col items-center"
+          )}>
+            <h1 className="swiss-headline text-white text-5xl md:text-7xl lg:text-8xl max-w-5xl">
+              {title}
+            </h1>
+            {description && (
+              <p className={cn(
+                "swiss-body text-white/70 text-lg md:text-xl mt-8 max-w-2xl",
+                align === "left" && "border-l-4 border-accent pl-6"
+              )}>
+                {description}
+              </p>
+            )}
+          </div>
+
+        </div>
       </div>
-    </div>
+    </section>
   )
 }

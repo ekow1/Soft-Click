@@ -1,8 +1,5 @@
 import * as React from "react"
-import { Building2, Store, Landmark, ShoppingCart, Landmark as GovermentIcon, GraduationCap, ArrowRight } from "lucide-react"
-
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
-import { SectionWrapper } from "@/components/layout/section-wrapper"
+import { Building2, Store, Landmark, ShoppingCart, Landmark as GovernmentIcon, GraduationCap, ArrowRight } from "lucide-react"
 
 const industriesData = [
   {
@@ -13,7 +10,7 @@ const industriesData = [
   },
   {
     name: "Government & Public Sector",
-    icon: GovermentIcon,
+    icon: GovernmentIcon,
     description: "Nation-scale citizen identity portals, revenue collection systems, and integrated public service platforms.",
     features: ["Citizen Identity Portals", "Tax Collection Engines", "Secure Interoperability"],
   },
@@ -45,34 +42,62 @@ const industriesData = [
 
 export function IndustriesGrid() {
   return (
-    <SectionWrapper background="background">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto border-t pt-16 mt-8 border-slate-100">
-        {industriesData.map((industry, index) => (
-          <Card key={index} className="group border border-slate-200 shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-300 bg-white">
-            <CardHeader className="pb-4">
-              <div className="bg-slate-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-slate-100 group-hover:bg-primary transition-colors duration-300">
-                <industry.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
+    <section className="w-full bg-background border-b-2 border-border">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 py-20 md:py-28">
+
+        {/* Section Header */}
+        <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 mb-16 lg:mb-20">
+          <div className="col-span-12 lg:col-span-3 flex items-center gap-4">
+            <span className="swiss-label text-accent">01 — Sectors</span>
+            <span className="h-px flex-1 bg-border" />
+          </div>
+          <div className="col-span-12 lg:col-span-9">
+            <h2 className="swiss-headline text-foreground text-4xl md:text-5xl lg:text-6xl mb-6">
+              We speak your <span className="text-muted-foreground">language.</span>
+            </h2>
+            <p className="swiss-body text-muted-foreground text-base md:text-lg max-w-2xl">
+              Delivering bespoke digital transformation across vertical domains. We understand the regulatory constraints and operational nuances of your sector.
+            </p>
+          </div>
+        </div>
+
+        {/* Industries Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-l-2 border-t-2 border-border">
+          {industriesData.map((industry, index) => (
+            <div
+              key={index}
+              className="group border-r-2 border-b-2 border-border p-8 md:p-10 transition-all duration-150 ease-linear hover:bg-foreground hover:text-background"
+            >
+              <div className="flex items-start justify-between mb-8">
+                <span className="swiss-label text-muted-foreground group-hover:text-background/60">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div className="p-3 swiss-border-thick border-border group-hover:border-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-150">
+                  <industry.icon className="w-5 h-5" />
+                </div>
               </div>
-              <CardTitle className="text-2xl font-bold tracking-tight text-slate-900 group-hover:text-primary transition-colors">
+
+              <h3 className="swiss-headline text-foreground group-hover:text-background text-xl md:text-2xl mb-4 transition-colors duration-150">
                 {industry.name}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-slate-600 leading-relaxed mb-6">
+              </h3>
+              <p className="swiss-body text-muted-foreground group-hover:text-background/70 text-sm leading-relaxed mb-6 transition-colors duration-150">
                 {industry.description}
               </p>
-              <div className="space-y-3 pt-6 border-t border-slate-100">
-                {industry.features.map((feature, idx) => (
-                  <div key={idx} className="flex items-center text-sm font-semibold text-slate-800">
-                    <ArrowRight className="h-4 w-4 text-accent mr-3 flex-shrink-0" />
-                    {feature}
-                  </div>
+
+              <ul className="space-y-2 pt-6 border-t-2 border-border group-hover:border-background/20 transition-colors duration-150">
+                {industry.features.map((feature, i) => (
+                  <li key={i} className="flex items-center gap-2">
+                    <ArrowRight className="h-3 w-3 text-accent shrink-0" strokeWidth={3} />
+                    <span className="swiss-label text-muted-foreground group-hover:text-background/80 text-xs transition-colors duration-150">
+                      {feature}
+                    </span>
+                  </li>
                 ))}
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
-    </SectionWrapper>
+    </section>
   )
 }

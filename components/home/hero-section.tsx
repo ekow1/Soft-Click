@@ -4,118 +4,114 @@ import { Code, LayoutDashboard, Network, Cloud, Briefcase, ArrowRight } from "lu
 
 import { Button } from "@/components/ui/button"
 
+const services = [
+  { icon: Code, label: "Enterprise Software" },
+  { icon: LayoutDashboard, label: "Web & Mobile" },
+  { icon: Network, label: "Systems Integration" },
+  { icon: Cloud, label: "Cloud & DevOps" },
+  { icon: Briefcase, label: "IT Consulting" },
+]
+
 export function HomeHeroSection() {
   return (
-     <section className="relative w-full min-h-screen bg-[#020617] overflow-hidden flex flex-col pt-32 pb-0">
-      
-      {/* Premium Image Background with Overlay */}
+    <section className="relative w-full min-h-screen bg-[#020617] overflow-hidden flex flex-col swiss-noise">
+
+      {/* Background Image */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {/* Real Image Background */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 animate-in fade-in duration-1000"
           style={{ backgroundImage: "url('/images/hero/hero-bg.png')" }}
         />
-        
-        {/* Deep Gradient Overlays for Readability - STRENGTHENED */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/95 to-transparent z-10" />
+        {/* Gradient Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/95 to-[#020617]/40 z-10" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-[#020617]/70 z-10" />
-        
-        {/* Accent Glows (Reduced opacity to keep image visible but maintain brand feel) */}
-        <div className="absolute top-[20%] left-[-10%] w-[60%] h-[60%] rounded-none bg-accent/10 blur-[120px] animate-pulse duration-[10s] z-20"></div>
-        <div className="absolute bottom-[10%] right-[-5%] w-[50%] h-[50%] rounded-none bg-primary/20 blur-[100px] animate-pulse duration-[8s] z-20"></div>
-        
-        {/* Subtle Texture */}
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 contrast-150 brightness-100 mix-blend-overlay z-20"></div>
+        {/* Accent Glows */}
+        <div className="absolute top-[20%] left-[-10%] w-[60%] h-[60%] bg-accent/10 blur-[120px] z-10" />
+        <div className="absolute bottom-[10%] right-[-5%] w-[50%] h-[50%] bg-primary/20 blur-[100px] z-10" />
       </div>
 
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-20 flex-1 flex flex-col justify-end pb-36 lg:pb-52">
-        <div className="flex flex-col lg:flex-row items-end justify-between w-full gap-12 lg:gap-24">
-           
-           {/* Bottom Left: Hero Text */}
-            <div className="max-w-5xl">
-              <div className="flex flex-wrap items-center gap-4 mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-white/10 border border-white/20 backdrop-blur-md text-white/70 text-xs font-black tracking-[0.2em] uppercase">
-                  <span className="flex h-2 w-2 rounded-none bg-accent animate-ping"></span>
-                  Digital Transformation
-                </div>
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-none bg-accent text-accent-foreground text-xs font-black tracking-[0.2em] uppercase">
-                  15+ Years of Excellence
-                </div>
+      {/* Swiss Grid Pattern Overlay */}
+      <div className="absolute inset-0 swiss-grid-pattern opacity-[0.04] pointer-events-none z-20" />
+
+      {/* Main Content */}
+      <div className="relative z-30 flex-1 flex flex-col justify-center pt-32 pb-32 lg:pt-40 lg:pb-40">
+        <div className="container mx-auto px-4 md:px-8 lg:px-12">
+
+          {/* Top Meta Row - Swiss Label + Badges */}
+          <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 mb-12 lg:mb-20">
+            <div className="col-span-12 lg:col-span-3">
+              <div className="flex items-center gap-4">
+                <span className="swiss-label text-accent">01 — Hero</span>
+                <span className="h-px flex-1 bg-white/20" />
               </div>
-              
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter text-white leading-[0.85] md:leading-[0.85] mb-8 drop-shadow-2xl">
-                Building Scalable <br />
-                <span className="text-white/60 italic font-medium text-2xl sm:text-3xl md:text-4xl block mt-2">Digital Solutions.</span>
+            </div>
+            <div className="col-span-12 lg:col-span-9 flex flex-wrap items-center gap-3">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border-2 border-white/20 backdrop-blur-md text-white/80 swiss-label">
+                <span className="flex h-2 w-2 bg-accent animate-pulse" />
+                Digital Transformation
+              </div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-transparent text-white border-2 border-white/30 swiss-label">
+                15+ Years of Excellence
+              </div>
+            </div>
+          </div>
+
+          {/* Asymmetric Hero Grid: 8 / 4 */}
+          <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 items-end">
+
+            {/* Headline - 8 columns */}
+            <div className="col-span-12 lg:col-span-8">
+              <h1 className="swiss-headline text-white text-6xl sm:text-7xl md:text-8xl lg:text-9xl">
+                Building
+                <br />
+                <span className="text-accent">Scalable</span>
+                <br />
+                Digital Solutions.
               </h1>
- 
-              <p className="text-white/70 text-sm md:text-base font-medium max-w-xl leading-relaxed tracking-wide border-l-2 border-accent/40 pl-6 animate-in fade-in slide-in-from-left-4 duration-1000 delay-300">
-                A legacy of engineering mission-critical systems that bridge the gap between complex business challenges and elegant technology. 
-              </p>
             </div>
 
-           {/* Bottom Right: High-Contrast CTA */}
-           <div className="shrink-0 flex flex-col sm:flex-row items-center gap-4 lg:gap-6">
-             <Button asChild size="lg" variant="outline" className="group relative overflow-hidden rounded-none px-8 h-12 md:h-14 hover:bg-white text-accent-foreground hover:text-primary-foreground font-black text-sm md:text-base transition-all shadow-xl hover:scale-105 active:scale-95 border-b-2 border-black/10 w-full sm:w-auto">
-               <Link href="/services" className="flex items-center gap-3">
-                 Explore our services
-                 <div className="w-5 h-5 rounded-none bg-black/5 flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                   <Network className="w-3.5 h-3.5" />
-                 </div>
-               </Link>
-             </Button>
+            {/* Description + CTAs - 4 columns */}
+            <div className="col-span-12 lg:col-span-4 flex flex-col gap-8">
+              <div className="border-l-4 border-accent pl-6">
+                <p className="swiss-body text-white/80 text-base md:text-lg">
+                  A legacy of engineering mission-critical systems that bridge complex business challenges with elegant technology.
+                </p>
+              </div>
 
-             <Button asChild size="lg" variant="outline" className="group relative overflow-hidden rounded-none px-8 h-12 md:h-14 bg-transparent hover:bg-white text-white hover:text-primary-foreground font-black text-sm md:text-base border-white/20 transition-all hover:scale-105 active:scale-95 w-full sm:w-auto">
-               <Link href="/about" className="flex items-center gap-3">
-                 Learn more about us
-                 <div className="w-5 h-5 rounded-none bg-white/5 flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                   <ArrowRight className="w-3.5 h-3.5" />
-                 </div>
-               </Link>
-             </Button>
-           </div>
+              <div className="flex flex-wrap gap-3">
+                <Button asChild className="swiss-border-thick h-12 px-6 bg-white text-[#020617] border-white hover:bg-accent hover:text-accent-foreground hover:border-accent">
+                  <Link href="/services">
+                    <span>Explore Services</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </Button>
 
+                <Button asChild variant="outline" className="swiss-border-thick h-12 px-6 bg-transparent text-white border-white/30 hover:bg-white hover:text-[#020617] hover:border-white">
+                  <Link href="/about">
+                    <span>Learn More</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
 
-      {/* Bottom Service Strip - Ultra-Slim Transparent Endless Carousel */}
-      <div className="absolute bottom-8 left-0 w-full z-20 overflow-hidden py-4 bg-slate-950/20 backdrop-blur-[2px] border-y border-white/5 [mask-image:linear-gradient(to_right,transparent_0%,black_10%,black_90%,transparent_100%)]">
-        <div className="flex animate-marquee whitespace-nowrap items-center h-full">
+      {/* Service Strip - Bottom */}
+      <div className="relative z-30 overflow-hidden py-6 bg-[#020617]/80 backdrop-blur-sm border-t-2 border-white/10">
+        <div className="flex animate-marquee whitespace-nowrap items-center">
           {[...Array(4)].map((_, i) => (
             <div key={i} className="flex gap-12 md:gap-20 items-center shrink-0 px-6 md:px-10">
-               <div className="flex items-center gap-3 group cursor-default">
-                 <div className="w-8 h-8 rounded-none bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent/20 group-hover:border-accent/30 transition-all">
-                   <Code className="w-4 h-4 text-accent" />
-                 </div>
-                  <span className="text-[11px] font-extrabold uppercase tracking-widest text-white/60 group-hover:text-white transition-colors">Enterprise Software</span>
-               </div>
-               
-               <div className="flex items-center gap-3 group cursor-default">
-                 <div className="w-8 h-8 rounded-none bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent/20 group-hover:border-accent/30 transition-all">
-                   <LayoutDashboard className="w-4 h-4 text-accent" />
-                 </div>
-                 <span className="text-[11px] font-extrabold uppercase tracking-widest text-white/60 group-hover:text-white transition-colors">Web & Mobile</span>
-               </div>
- 
-               <div className="flex items-center gap-3 group cursor-default">
-                 <div className="w-8 h-8 rounded-none bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent/20 group-hover:border-accent/30 transition-all">
-                   <Network className="w-4 h-4 text-accent" />
-                 </div>
-                 <span className="text-[11px] font-extrabold uppercase tracking-widest text-white/60 group-hover:text-white transition-colors">Systems Integration</span>
-               </div>
- 
-               <div className="flex items-center gap-3 group cursor-default">
-                 <div className="w-8 h-8 rounded-none bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent/20 group-hover:border-accent/30 transition-all">
-                   <Cloud className="w-4 h-4 text-accent" />
-                 </div>
-                 <span className="text-[11px] font-extrabold uppercase tracking-widest text-white/60 group-hover:text-white transition-colors">Cloud & DevOps</span>
-               </div>
- 
-               <div className="flex items-center gap-3 group cursor-default">
-                 <div className="w-8 h-8 rounded-none bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent/20 group-hover:border-accent/30 transition-all">
-                   <Briefcase className="w-4 h-4 text-accent" />
-                 </div>
-                 <span className="text-[11px] font-extrabold uppercase tracking-widest text-white/60 group-hover:text-white transition-colors">IT Consulting</span>
-               </div>
+              {services.map((service, idx) => (
+                <div key={idx} className="flex items-center gap-3 group cursor-default">
+                  <div className="w-9 h-9 bg-white/5 border-2 border-white/10 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-all duration-150">
+                    <service.icon className="w-4 h-4 text-accent group-hover:text-accent-foreground transition-colors duration-150" />
+                  </div>
+                  <span className="swiss-label text-white/60 group-hover:text-white transition-colors duration-150">{service.label}</span>
+                </div>
+              ))}
             </div>
           ))}
         </div>

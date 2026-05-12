@@ -7,9 +7,11 @@ export default function ProjectsPage() {
   return (
     <>
       <PageHero
-        title="Proven Engineering Pedigree"
+        title="Our case studies."
         description="Explore how SoftClick Solutions has architected and delivered transformative technology for Africa's leading organizations."
-        align="center"
+        align="left"
+        sectionNumber="00"
+        sectionLabel="Projects"
       />
       <CaseStudiesGrid />
       <ProjectResults />

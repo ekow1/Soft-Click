@@ -5,101 +5,107 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    --font-sans: var(--font-sans);
-    --font-heading: var(--font-sans);
-    --font-mono: var(--font-mono);
-    --color-sidebar-ring: var(--sidebar-ring);
-    --color-sidebar-border: var(--sidebar-border);
-    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-    --color-sidebar-accent: var(--sidebar-accent);
-    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-    --color-sidebar-primary: var(--sidebar-primary);
-    --color-sidebar-foreground: var(--sidebar-foreground);
-    --color-sidebar: var(--sidebar);
-    --color-chart-5: var(--chart-5);
-    --color-chart-4: var(--chart-4);
-    --color-chart-3: var(--chart-3);
-    --color-chart-2: var(--chart-2);
-    --color-chart-1: var(--chart-1);
-    --color-ring: var(--ring);
-    --color-input: var(--input);
-    --color-border: var(--border);
-    --color-destructive: var(--destructive);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-accent: var(--accent);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-muted: var(--muted);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-secondary: var(--secondary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-primary: var(--primary);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-popover: var(--popover);
-    --color-card-foreground: var(--card-foreground);
-    --color-card: var(--card);
-    --color-foreground: var(--foreground);
-    --color-background: var(--background);
-    --radius-sm: calc(var(--radius) * 0.5);
-    --radius-md: calc(var(--radius) * 0.75);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) * 1.5);
-    --radius-2xl: calc(var(--radius) * 2);
-    --radius-3xl: calc(var(--radius) * 2.5);
-    --radius-4xl: calc(var(--radius) * 3);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.5);
+  --radius-2xl: calc(var(--radius) * 2);
+  --radius-3xl: calc(var(--radius) * 2.5);
+  --radius-4xl: calc(var(--radius) * 3);
 
-    --animate-marquee: marquee 60s linear infinite;
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-25%); }
+  --animate-marquee: marquee 60s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
     }
+
+    to {
+      transform: translateX(-25%);
+    }
+  }
 }
 
 :root {
-    --background: oklch(0.99 0.005 260);
-    --foreground: oklch(0.15 0.01 260);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.15 0.01 260);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.15 0.01 260);
+  --background: oklch(0.99 0.005 260);
+  --foreground: oklch(0.15 0.01 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.01 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.01 260);
 
-    /* Deep Navy */
-    --primary: oklch(0.3 0.1 260);
-    --primary-foreground: oklch(0.98 0.01 260);
+  /* Deep Navy - Swiss Primary */
+  --primary: oklch(0.3 0.1 260);
+  --primary-foreground: oklch(0.98 0.01 260);
 
-    /* Muted navy for secondary */
-    --secondary: oklch(0.95 0.02 260);
-    --secondary-foreground: oklch(0.3 0.1 260);
-    
-    --muted: oklch(0.95 0.02 260);
-    --muted-foreground: oklch(0.55 0.03 260);
+  /* Muted navy for secondary - Swiss Muted */
+  --secondary: oklch(0.95 0.02 260);
+  --secondary-foreground: oklch(0.3 0.1 260);
 
-    /* Gold / Green accent depending on preference, going with Gold/Amber here */
-    --accent: oklch(0.85 0.15 85);
-    --accent-foreground: oklch(0.25 0.05 85);
+  --muted: oklch(0.95 0.02 260);
+  --muted-foreground: oklch(0.55 0.03 260);
 
-    --destructive: oklch(0.6 0.25 25);
-    --destructive-foreground: oklch(0.98 0 0);
+  /* Gold / Amber accent - Swiss Accent */
+  --accent: oklch(0.85 0.15 85);
+  --accent-foreground: oklch(0.25 0.05 85);
 
-    --border: oklch(0.9 0.02 260);
-    --input: oklch(0.9 0.02 260);
-    --ring: oklch(0.3 0.1 260);
-    
-    --chart-1: oklch(0.5 0.2 28);
-    --chart-2: oklch(0.6 0.15 175);
-    --chart-3: oklch(0.3 0.1 260);
-    --chart-4: oklch(0.85 0.15 85);
-    --chart-5: oklch(0.7 0.2 60);
-    
-    --radius: 0;
+  --destructive: oklch(0.6 0.25 25);
+  --destructive-foreground: oklch(0.98 0 0);
 
-    --sidebar: oklch(0.99 0.005 260);
-    --sidebar-foreground: oklch(0.15 0.01 260);
-    --sidebar-primary: oklch(0.3 0.1 260);
-    --sidebar-primary-foreground: oklch(0.98 0.01 260);
-    --sidebar-accent: oklch(0.95 0.02 260);
-    --sidebar-accent-foreground: oklch(0.15 0.01 260);
-    --sidebar-border: oklch(0.9 0.02 260);
-    --sidebar-ring: oklch(0.3 0.1 260);
+  --border: oklch(0.9 0.02 260);
+  --input: oklch(0.9 0.02 260);
+  --ring: oklch(0.3 0.1 260);
+
+  --chart-1: oklch(0.5 0.2 28);
+  --chart-2: oklch(0.6 0.15 175);
+  --chart-3: oklch(0.3 0.1 260);
+  --chart-4: oklch(0.85 0.15 85);
+  --chart-5: oklch(0.7 0.2 60);
+
+  --radius: 0;
+
+  --sidebar: oklch(0.99 0.005 260);
+  --sidebar-foreground: oklch(0.15 0.01 260);
+  --sidebar-primary: oklch(0.3 0.1 260);
+  --sidebar-primary-foreground: oklch(0.98 0.01 260);
+  --sidebar-accent: oklch(0.95 0.02 260);
+  --sidebar-accent-foreground: oklch(0.15 0.01 260);
+  --sidebar-border: oklch(0.9 0.02 260);
+  --sidebar-ring: oklch(0.3 0.1 260);
 }
 
 
@@ -109,7 +115,165 @@
   * {
     @apply border-border outline-ring/50 transition-colors duration-300;
   }
+
   body {
     @apply bg-background text-foreground font-sans transition-colors duration-500;
+  }
+}
+
+/* Swiss Texture Patterns */
+@layer utilities {
+
+  /* Grid Pattern - 24x24px grid lines */
+  .swiss-grid-pattern {
+    background-image: linear-gradient(to right, var(--border) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-position: center center;
+  }
+
+  /* Dot Matrix - 16x16px radial dots */
+  .swiss-dots {
+    background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
+    background-size: 16px 16px;
+    background-position: center center;
+  }
+
+  /* Diagonal Lines - 45-degree repeating lines */
+  .swiss-diagonal {
+    background-image: repeating-linear-gradient(45deg,
+        var(--border) 0,
+        var(--border) 1px,
+        transparent 0,
+        transparent 50%);
+    background-size: 10px 10px;
+  }
+
+  /* Noise Texture - subtle grain */
+  .swiss-noise {
+    position: relative;
+  }
+
+  .swiss-noise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+  }
+
+  /* Swiss Typography Utilities */
+  .swiss-headline {
+    @apply font-black tracking-tighter uppercase leading-[0.85];
+  }
+
+  .swiss-subheadline {
+    @apply font-bold tracking-wide uppercase;
+  }
+
+  .swiss-body {
+    @apply font-normal leading-relaxed text-left;
+  }
+
+  .swiss-label {
+    @apply font-bold tracking-widest uppercase text-xs;
+  }
+
+  /* Swiss Layout Utilities */
+  .swiss-section {
+    @apply py-24 px-4 md:px-8 lg:px-12;
+  }
+
+  .swiss-grid {
+    @apply grid grid-cols-12 gap-4 md:gap-6 lg:gap-8;
+  }
+
+  .swiss-border-thick {
+    @apply border-2 border-border;
+  }
+
+  .swiss-border-thin {
+    @apply border border-border;
+  }
+
+  /* Swiss Interaction Utilities */
+  .swiss-hover-invert {
+    @apply transition-all duration-150 ease-linear;
+  }
+
+  .swiss-hover-invert:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  .swiss-hover-accent:hover {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  /* Swiss Micro-interactions */
+  @keyframes swiss-slide-up {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(-2px);
+    }
+  }
+
+  @keyframes swiss-scale {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes swiss-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(90deg);
+    }
+  }
+
+  .swiss-hover-lift:hover {
+    animation: swiss-slide-up 150ms ease-linear forwards;
+  }
+
+  .swiss-hover-scale:hover {
+    animation: swiss-scale 150ms ease-linear forwards;
+  }
+
+  .swiss-icon-rotate:hover svg {
+    animation: swiss-rotate 150ms ease-linear forwards;
+  }
+
+  /* Swiss Link Animation - vertical slide */
+  .swiss-link {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .swiss-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent);
+    transform: translateX(-100%);
+    transition: transform 150ms ease-linear;
+  }
+
+  .swiss-link:hover::after {
+    transform: translateX(0);
   }
 }

@@ -7,9 +7,11 @@ export default function ServicesPage() {
   return (
     <>
       <PageHero
-        title="Engineering Solutions for the Enterprise"
+        title="Engineering solutions for the enterprise."
         description="We plan, design, and deploy mission-critical software infrastructure, ensuring unparalleled security, scalability, and performance."
-        align="center"
+        align="left"
+        sectionNumber="00"
+        sectionLabel="Services"
       />
       <ServicesGrid />
       <ServiceProcess />

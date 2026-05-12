@@ -7,9 +7,11 @@ export default function IndustriesPage() {
   return (
     <>
       <PageHero
-        title="We Speak Your Language"
-        description="Delivering bespoke digital transformation across vertical domains. We understand the regulatory constraints and operational nuances of your sector."
-        align="center"
+        title="Industries we serve."
+        description="We deliver bespoke digital transformation across vertical domains, understanding the regulatory constraints and operational nuances of your sector."
+        align="left"
+        sectionNumber="00"
+        sectionLabel="Industries"
       />
       <IndustriesGrid />
       <IndustryBenefits />

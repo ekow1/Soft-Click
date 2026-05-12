@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -12,13 +12,39 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { cn } from "@/lib/utils"
+import { MegaMenu } from "@/components/shared/mega-menu"
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Products", href: "/products" },
+  {
+    name: "Products",
+    href: "/products",
+    hasSubmenu: true,
+    items: [
+      { name: "GH Banker", href: "/products/gh-banker", description: "Core Banking Platform" },
+      { name: "Sika Agent GH", href: "/products/sika-agent", description: "Agent Banking Solution" },
+      { name: "Payroll", href: "/products/payroll", description: "Enterprise Payroll Management" },
+      { name: "Oil Management System", href: "/products/oil-management", description: "Fuel Distribution Management" },
+    ],
+  },
+  {
+    name: "Services",
+    href: "/services",
+    hasSubmenu: true,
+    items: [
+      { name: "Custom Software Development", href: "/services/custom-software", description: "Tailored software solutions" },
+      { name: "Mobile & Web App Development", href: "/services/mobile-web", description: "Cross-platform applications" },
+      { name: "System Integration", href: "/services/integration", description: "Enterprise system integration" },
+      { name: "IT Advisory & Consultation", href: "/services/advisory", description: "Strategic IT consulting" },
+      { name: "Cloud Hosting", href: "/services/cloud", description: "Scalable cloud infrastructure" },
+      { name: "Networking Solutions", href: "/services/networking", description: "Network design and setup" },
+      { name: "ICT Support Services", href: "/services/support", description: "24/7 technical support" },
+    ],
+  },
   { name: "Projects", href: "/projects" },
+  { name: "Industries", href: "/industries" },
+  { name: "About Us", href: "/about" },
+  { name: "Contact Us", href: "/contact" },
 ]
 
 
@@ -27,6 +53,8 @@ export function SiteHeader() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = React.useState(false)
   const [isScrolled, setIsScrolled] = React.useState(false)
+  const [openMenu, setOpenMenu] = React.useState<string | null>(null)
+  const [mobileOpenMenu, setMobileOpenMenu] = React.useState<string | null>(null)
 
   const isHome = pathname === "/"
 
@@ -43,24 +71,24 @@ export function SiteHeader() {
   return (
     <header className={cn(
       isHome ? "fixed" : "sticky",
-      "top-0 z-50 w-full transition-all duration-700 ease-in-out",
-      isTransparent 
-        ? "bg-transparent border-transparent pt-6" 
-        : "bg-background/80 backdrop-blur-xl border-b border-border py-4 shadow-2xl"
+      "top-0 z-50 w-full transition-all duration-200 ease-linear",
+      isTransparent
+        ? "bg-transparent border-transparent pt-6"
+        : "bg-background/95 backdrop-blur-xl border-b-2 border-border py-4"
     )}>
-      <div className="container mx-auto flex h-14 items-center justify-between px-4 md:px-8">
-        
-        {/* Left: Minimalist Logo */}
+      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-8 lg:px-12">
+
+        {/* Left: Logo - Swiss Style */}
         <div className="flex items-center">
           <Link href="/" className="flex items-center gap-3 group">
             <div className={cn(
-              "p-2 rounded-none flex items-center justify-center font-black text-xs transition-all duration-500 shadow-inner",
-              isTransparent ? "bg-white text-slate-950 group-hover:scale-110" : "bg-primary text-primary-foreground group-hover:rotate-12"
+              "p-3 rounded-none flex items-center justify-center font-black text-sm transition-all duration-150 swiss-border-thick",
+              isTransparent ? "bg-white text-[#020617] hover:bg-accent hover:text-accent-foreground" : "bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground"
             )}>
               SC
             </div>
             <span className={cn(
-              "font-bold text-lg md:text-xl tracking-tight transition-colors duration-500",
+              "swiss-headline text-lg md:text-xl transition-colors duration-150",
               isTransparent ? "text-white" : "text-foreground"
             )}>
               SoftClick
@@ -68,41 +96,63 @@ export function SiteHeader() {
           </Link>
         </div>
 
-        {/* Center: Floating Capsule Navigation */}
-        <nav className="hidden lg:flex items-center absolute left-1/2 -translate-x-1/2">
-          <div className={cn(
-            "flex gap-1 items-center px-2 py-1.5 rounded-none transition-all duration-700 shadow-2xl border",
-            isTransparent 
-              ? "bg-slate-900/40 backdrop-blur-md border-white/10" 
-              : "bg-muted/50 backdrop-blur-lg border-border"
-          )}>
-            {navigation.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  "px-5 py-1.5 rounded-none transition-all text-[13px] font-bold tracking-wide",
-                  isTransparent 
-                    ? (pathname === item.href ? "bg-white/10 text-white shadow-sm" : "text-white/60 hover:text-white hover:bg-white/5")
-                    : (pathname === item.href ? "bg-primary/10 text-primary shadow-sm" : "text-muted-foreground hover:text-foreground hover:bg-muted")
-                )}
-              >
-                {item.name}
-              </Link>
-            ))}
+        {/* Center: Swiss Grid Navigation */}
+        <nav className="hidden lg:flex items-center">
+          <div className="flex gap-1 items-center">
+            {navigation.map((item) => {
+              if (item.hasSubmenu && item.items) {
+                return (
+                  <MegaMenu
+                    key={item.name}
+                    trigger={
+                      <button
+                        className={cn(
+                          "px-4 py-2 rounded-none transition-all duration-150 ease-linear text-xs font-bold uppercase tracking-widest flex items-center gap-2 swiss-border-thin",
+                          isTransparent
+                            ? (openMenu === item.name ? "bg-white text-[#020617] border-white" : "text-white/70 hover:text-white hover:bg-white/10 border-transparent")
+                            : (openMenu === item.name ? "bg-primary text-primary-foreground border-primary" : "text-muted-foreground hover:text-foreground hover:bg-muted/50 border-transparent")
+                        )}
+                      >
+                        {item.name}
+                        <ChevronDown className="w-3 h-3" />
+                      </button>
+                    }
+                    items={item.items}
+                    isOpen={openMenu === item.name}
+                    onOpenChange={(open) => setOpenMenu(open ? item.name : null)}
+                    isTransparent={isTransparent}
+                  />
+                )
+              }
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "px-4 py-2 rounded-none transition-all duration-150 ease-linear text-xs font-bold uppercase tracking-widest swiss-border-thin",
+                    isTransparent
+                      ? (pathname === item.href ? "bg-white text-[#020617] border-white" : "text-white/70 hover:text-white hover:bg-white/10 border-transparent")
+                      : (pathname === item.href ? "bg-primary text-primary-foreground border-primary" : "text-muted-foreground hover:text-foreground hover:bg-muted/50 border-transparent")
+                  )}
+                >
+                  {item.name}
+                </Link>
+              )
+            })}
           </div>
         </nav>
 
-        {/* Right: Pill Button & Mobile Toggle */}
+        {/* Right: CTA Button & Mobile Toggle */}
         <div className="flex items-center gap-4">
-          
+
           <Button asChild variant="outline" className={cn(
-            "hidden md:inline-flex rounded-none px-8 h-11 transition-all duration-500 border font-bold text-xs tracking-widest uppercase",
-            isTransparent 
-              ? "border-white/20 bg-transparent text-white hover:bg-white hover:text-slate-950 shadow-lg" 
-              : "border-primary/30 bg-primary/5 text-primary hover:bg-primary hover:text-primary-foreground shadow-sm"
+            "hidden md:inline-flex swiss-border-thick px-6 h-12 transition-all duration-150 ease-linear font-bold text-xs tracking-widest uppercase",
+            isTransparent
+              ? "border-white/30 bg-transparent text-white hover:bg-white hover:text-[#020617]"
+              : "border-border bg-transparent text-foreground hover:bg-primary hover:text-primary-foreground"
           )}>
-            <Link href="/contact">Get in touch</Link>
+            <Link href="/contact">Contact</Link>
           </Button>
 
           {/* Mobile Navigation */}
@@ -111,37 +161,79 @@ export function SiteHeader() {
               <Button
                 variant="ghost"
                 className={cn(
-                  "px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 lg:hidden",
-                  isTransparent ? "text-white" : "text-foreground"
+                  "px-3 h-12 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 lg:hidden swiss-border-thin",
+                  isTransparent ? "text-white border-white/20" : "text-foreground border-border"
                 )}
               >
-                <Menu className="h-7 w-7" />
+                <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background border-border text-foreground p-8">
-              <div className="flex items-center gap-3 mb-12">
-                 <div className="bg-primary text-primary-foreground p-2 rounded-none font-black text-xs">SC</div>
-                 <span className="font-bold text-xl tracking-tight">SoftClick</span>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background border-2 border-border text-foreground p-8 swiss-noise">
+              <div className="flex items-center gap-3 mb-12 border-b-2 border-border pb-6">
+                <div className="bg-primary text-primary-foreground p-3 rounded-none font-black text-sm swiss-border-thick">SC</div>
+                <span className="swiss-headline text-xl">SoftClick</span>
               </div>
-              <nav className="flex flex-col gap-6">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                    className={cn(
-                      "text-2xl font-bold transition-all hover:translate-x-2",
-                      pathname === item.href ? "text-primary font-black" : "text-muted-foreground hover:text-foreground"
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-                <div className="mt-12">
-                  <Button asChild className="w-full h-14 rounded-none bg-primary text-primary-foreground hover:opacity-90 font-bold text-sm tracking-widest uppercase">
+              <nav className="flex flex-col gap-4">
+                {navigation.map((item) => {
+                  if (item.hasSubmenu && item.items) {
+                    return (
+                      <div key={item.name}>
+                        <button
+                          onClick={() => setMobileOpenMenu(mobileOpenMenu === item.name ? null : item.name)}
+                          className={cn(
+                            "swiss-label text-left w-full py-2 flex items-center gap-2 transition-all duration-150",
+                            pathname.startsWith(item.href) ? "text-primary font-black" : "text-muted-foreground hover:text-foreground"
+                          )}
+                        >
+                          {item.name}
+                          <ChevronDown className={cn(
+                            "w-4 h-4 transition-transform duration-150",
+                            mobileOpenMenu === item.name ? "rotate-180" : ""
+                          )} />
+                        </button>
+                        {mobileOpenMenu === item.name && (
+                          <div className="ml-4 mt-2 space-y-2 border-l-2 border-border pl-4">
+                            {item.items.map((subItem) => (
+                              <Link
+                                key={subItem.href}
+                                href={subItem.href}
+                                onClick={() => {
+                                  setIsOpen(false)
+                                  setMobileOpenMenu(null)
+                                }}
+                                className={cn(
+                                  "block text-xs font-bold uppercase tracking-widest py-2 transition-all duration-150",
+                                  pathname === subItem.href ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                                )}
+                              >
+                                {subItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )
+                  }
+
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className={cn(
+                        "swiss-label py-2 transition-all duration-150",
+                        pathname === item.href ? "text-primary font-black" : "text-muted-foreground hover:text-foreground"
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                  )
+                })}
+                <div className="mt-12 pt-8 border-t-2 border-border">
+                  <Button asChild className="w-full h-14 swiss-border-thick bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground font-bold text-xs tracking-widest uppercase">
                     <Link href="/contact" onClick={() => setIsOpen(false)}>
-                      Get in touch
+                      Contact Us
                     </Link>
                   </Button>
                 </div>

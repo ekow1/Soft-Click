@@ -7,9 +7,11 @@ export default function ProductsPage() {
   return (
     <>
       <PageHero
-        title="Our Flagship Products"
+        title="Our flagship products."
         description="Robust, off-the-shelf software solutions that adapt to your complex enterprise workflows—not the other way around."
-        align="center"
+        align="left"
+        sectionNumber="00"
+        sectionLabel="Products"
       />
       <ProductsGrid />
       <ProductFeatures />

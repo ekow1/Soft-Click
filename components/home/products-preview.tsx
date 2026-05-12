@@ -2,11 +2,8 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { ArrowRight, Plus, X, ChevronRight, Layers, CreditCard, ShieldCheck } from "lucide-react"
+import { ArrowRight, Plus, X, Layers, CreditCard, ShieldCheck } from "lucide-react"
 import { cn } from "@/lib/utils"
-
-import { SectionHeading } from "@/components/shared/section-heading"
-import { SectionWrapper } from "@/components/layout/section-wrapper"
 
 const products = [
   {
@@ -42,122 +39,133 @@ export function ProductsPreview() {
   const [activeId, setActiveId] = React.useState(products[0].id)
 
   return (
-    <SectionWrapper background="background" padding="xl">
-      <div className="flex flex-col lg:flex-row justify-between lg:items-end gap-8 mb-16 px-4">
-        <SectionHeading
-          title="Flagship Products"
-          subheading="Enterprise-ready software products designed to run modern African businesses."
-          className="mb-0 flex-1 max-w-2xl"
-          align="left"
-        />
-        <div className="flex-shrink-0">
-          <Link
-            href="/products"
-            className="group inline-flex items-center justify-center rounded-none bg-slate-950 text-white px-8 h-12 text-sm font-black tracking-tight transition-all hover:bg-accent hover:text-accent-foreground"
-          >
-            Explore All Products
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Link>
-        </div>
-      </div>
+    <section className="w-full bg-background border-b-2 border-border">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 py-20 md:py-28">
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start px-4">
-        {/* Left: Product List Accordion */}
-        <div className="lg:col-span-5 space-y-4">
-          {products.map((product) => {
-            const isActive = activeId === product.id
-            return (
-              <div
-                key={product.id}
-                onClick={() => setActiveId(product.id)}
-                className={cn(
-                  "group cursor-pointer border-t border-slate-100 py-6 transition-all duration-300",
-                  isActive ? "bg-slate-50/50 px-6 -mx-6 border-y border-slate-200" : "hover:bg-slate-50 hover:px-2 hover:-mx-2"
-                )}
-              >
-                <div className="flex justify-between items-center mb-2">
-                  <div className="flex items-center gap-4">
-                    <div className={cn(
-                      "p-2 rounded-none transition-colors",
-                      isActive ? "bg-accent text-accent-foreground" : "bg-slate-100 text-slate-400 group-hover:text-slate-600"
-                    )}>
-                      {product.id === "banker" && <CreditCard className="h-5 w-5" />}
-                      {product.id === "payroll" && <Layers className="h-5 w-5" />}
-                      {product.id === "custom" && <ShieldCheck className="h-5 w-5" />}
+        {/* Section Header - Swiss style */}
+        <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 mb-16 lg:mb-20">
+          <div className="col-span-12 lg:col-span-3 flex items-center gap-4">
+            <span className="swiss-label text-accent">04 — Products</span>
+            <span className="h-px flex-1 bg-border" />
+          </div>
+          <div className="col-span-12 lg:col-span-6">
+            <h2 className="swiss-headline text-foreground text-4xl md:text-5xl lg:text-6xl">
+              Flagship <span className="text-muted-foreground">Products.</span>
+            </h2>
+            <p className="swiss-body text-muted-foreground text-base mt-4 max-w-xl">
+              Enterprise-ready software designed to run modern African businesses.
+            </p>
+          </div>
+          <div className="col-span-12 lg:col-span-3 flex lg:justify-end items-end">
+            <Link
+              href="/products"
+              className="group inline-flex items-center justify-between gap-3 px-6 h-12 swiss-border-thick bg-foreground text-background hover:bg-accent hover:text-accent-foreground hover:border-accent swiss-label transition-all duration-150"
+            >
+              All Products
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+
+        {/* Product Accordion + Preview */}
+        <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 items-start">
+
+          {/* Left: Product List */}
+          <div className="col-span-12 lg:col-span-5 border-t-2 border-border">
+            {products.map((product) => {
+              const isActive = activeId === product.id
+              return (
+                <div
+                  key={product.id}
+                  onClick={() => setActiveId(product.id)}
+                  className={cn(
+                    "group cursor-pointer border-b-2 border-border py-6 px-4 transition-all duration-150 ease-linear",
+                    isActive ? "bg-foreground text-background" : "hover:bg-muted/50"
+                  )}
+                >
+                  <div className="flex justify-between items-center gap-4">
+                    <div className="flex items-center gap-4 flex-1">
+                      <div className={cn(
+                        "p-2.5 transition-colors duration-150 swiss-border-thick",
+                        isActive ? "bg-accent text-accent-foreground border-accent" : "bg-background text-muted-foreground border-border group-hover:border-foreground"
+                      )}>
+                        {product.id === "banker" && <CreditCard className="h-5 w-5" />}
+                        {product.id === "payroll" && <Layers className="h-5 w-5" />}
+                        {product.id === "custom" && <ShieldCheck className="h-5 w-5" />}
+                      </div>
+                      <h3 className={cn(
+                        "swiss-headline text-xl md:text-2xl transition-colors duration-150",
+                        isActive ? "text-background" : "text-foreground"
+                      )}>
+                        {product.title}
+                      </h3>
                     </div>
-                    <h3 className={cn(
-                      "text-xl md:text-2xl font-black tracking-tight transition-colors",
-                      isActive ? "text-slate-900" : "text-slate-400 group-hover:text-slate-900"
-                    )}>
-                      {product.title}
-                    </h3>
+                    {isActive ? (
+                      <X className="h-5 w-5 shrink-0" />
+                    ) : (
+                      <Plus className="h-5 w-5 shrink-0 transition-transform duration-150 group-hover:rotate-90" />
+                    )}
                   </div>
-                  {isActive ? (
-                    <X className="h-5 w-5 text-slate-400" />
-                  ) : (
-                    <Plus className="h-5 w-5 text-slate-300 group-hover:text-slate-500" />
+
+                  {isActive && (
+                    <div className="mt-6 animate-in fade-in slide-in-from-top-2 duration-200">
+                      <p className="text-background/70 mb-6 leading-relaxed text-sm">
+                        {product.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2 mb-8">
+                        {product.features.map((feature, idx) => (
+                          <span key={idx} className="swiss-label text-background/80 px-3 py-1.5 border-2 border-background/30">
+                            {feature}
+                          </span>
+                        ))}
+                      </div>
+                      <Link
+                        href={product.href}
+                        className="inline-flex items-center gap-3 swiss-label text-accent hover:text-background transition-colors duration-150"
+                      >
+                        View Detail
+                        <ArrowRight className="h-4 w-4" />
+                      </Link>
+                    </div>
                   )}
                 </div>
+              )
+            })}
+          </div>
 
-                {isActive && (
-                  <div className="mt-6 animate-in fade-in slide-in-from-top-2 duration-500">
-                    <p className="text-slate-600 mb-6 leading-relaxed">
-                      {product.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {product.features.map((feature, idx) => (
-                        <span key={idx} className="text-[10px] font-bold tracking-widest uppercase px-3 py-1 bg-white border border-slate-200 text-slate-500 rounded-none">
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-                    <Link
-                      href={product.href}
-                      className="inline-flex items-center text-sm font-black text-slate-950 group/link"
-                    >
-                      <ArrowRight className="mr-2 h-4 w-4 bg-slate-950 text-white p-1 rounded-none rotate-[315deg]" />
-                      View Detail
-                    </Link>
-                  </div>
-                )}
-              </div>
-            )
-          })}
-        </div>
-
-        {/* Right: Dynamic Preview Area */}
-        <div className="lg:col-span-7 sticky top-32">
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className={cn(
-                "absolute inset-0 transition-all duration-700 ease-in-out transform",
-                activeId === product.id 
-                  ? "opacity-100 translate-y-0 scale-100 pointer-events-auto" 
-                  : "opacity-0 translate-y-4 scale-95 pointer-events-none"
-              )}
-            >
-              <div className="bg-white rounded-none shadow-2xl shadow-slate-200/50 overflow-hidden">
-                <div className="aspect-[16/10] overflow-hidden bg-slate-100 relative">
-                  <img 
-                    src={product.image} 
+          {/* Right: Preview Area */}
+          <div className="col-span-12 lg:col-span-7 lg:sticky lg:top-32">
+            <div className="relative aspect-[16/10] swiss-border-thick bg-muted/30 overflow-hidden">
+              {products.map((product) => (
+                <div
+                  key={product.id}
+                  className={cn(
+                    "absolute inset-0 transition-opacity duration-150 ease-linear",
+                    activeId === product.id
+                      ? "opacity-100 pointer-events-auto"
+                      : "opacity-0 pointer-events-none"
+                  )}
+                >
+                  <img
+                    src={product.image}
                     alt={product.title}
                     className="w-full h-full object-cover"
                   />
                 </div>
+              ))}
+
+              {/* Swiss-style label overlay */}
+              <div className="absolute top-0 left-0 bg-foreground text-background px-4 py-2 swiss-label">
+                {products.find(p => p.id === activeId)?.subtitle}
               </div>
-              
-              {/* Product Info Label overlay */}
-              <div className="absolute -bottom-6 -right-6 hidden xl:block bg-accent text-accent-foreground p-8 rounded-none shadow-xl border border-white/20 max-w-xs animate-in slide-in-from-right-4 duration-700 delay-300">
-                <p className="text-[10px] font-black tracking-[0.2em] uppercase opacity-70 mb-2">Selected Product</p>
-                <h4 className="text-xl font-black tracking-tight leading-tight">{product.title}</h4>
+              <div className="absolute bottom-0 right-0 bg-accent text-accent-foreground px-6 py-3 swiss-label">
+                {products.find(p => p.id === activeId)?.title}
               </div>
             </div>
-          ))}
-          {/* Placeholder for layout stability */}
-          <div className="aspect-[16/10] invisible pointer-events-none" />
+          </div>
+
         </div>
       </div>
-    </SectionWrapper>
+    </section>
   )
 }

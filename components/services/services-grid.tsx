@@ -1,8 +1,6 @@
 import * as React from "react"
+import Link from "next/link"
 import { ArrowRight, Code, LayoutDashboard, Cloud, Network, Briefcase, Database, Lock, Smartphone } from "lucide-react"
-
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
-import { SectionWrapper } from "@/components/layout/section-wrapper"
 
 const detailedServices = [
   {
@@ -57,40 +55,68 @@ const detailedServices = [
 
 export function ServicesGrid() {
   return (
-    <SectionWrapper background="background">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto border-t pt-16 mt-8 border-slate-100">
-        {detailedServices.map((service, index) => (
-          <Card key={index} className="flex flex-col border border-slate-200 shadow-sm hover:shadow-xl hover:border-primary/50 transition-all duration-300 bg-white">
-            <CardHeader className="pb-4">
-              <div className="bg-slate-50 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 border border-slate-100 group-hover:bg-primary transition-colors">
-                <service.icon className="w-8 h-8 text-primary" />
+    <section className="w-full bg-background border-b-2 border-border">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 py-20 md:py-28">
+
+        {/* Section Header */}
+        <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 mb-16 lg:mb-20">
+          <div className="col-span-12 lg:col-span-3 flex items-center gap-4">
+            <span className="swiss-label text-accent">01 — Capabilities</span>
+            <span className="h-px flex-1 bg-border" />
+          </div>
+          <div className="col-span-12 lg:col-span-9">
+            <h2 className="swiss-headline text-foreground text-4xl md:text-5xl lg:text-6xl mb-6">
+              What we <span className="text-muted-foreground">build.</span>
+            </h2>
+            <p className="swiss-body text-muted-foreground text-base md:text-lg max-w-2xl">
+              Comprehensive engineering services across the modern enterprise technology stack.
+            </p>
+          </div>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-l-2 border-t-2 border-border">
+          {detailedServices.map((service, index) => (
+            <div
+              key={index}
+              className="group flex flex-col border-r-2 border-b-2 border-border p-8 transition-all duration-150 ease-linear hover:bg-foreground hover:text-background"
+            >
+              <div className="flex items-start justify-between mb-8">
+                <span className="swiss-label text-muted-foreground group-hover:text-background/60">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <div className="p-3 swiss-border-thick border-border group-hover:border-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-150">
+                  <service.icon className="w-5 h-5" />
+                </div>
               </div>
-              <CardTitle className="text-xl font-bold tracking-tight text-slate-900 leading-tight">
+
+              <h3 className="swiss-headline text-foreground group-hover:text-background text-xl md:text-2xl mb-4 transition-colors duration-150">
                 {service.title}
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="flex-1 pb-6">
-              <p className="text-slate-600 leading-relaxed mb-8">
+              </h3>
+              <p className="swiss-body text-muted-foreground group-hover:text-background/70 text-sm leading-relaxed mb-6 flex-1 transition-colors duration-150">
                 {service.description}
               </p>
-              <div className="space-y-2">
-                {service.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-center text-sm font-medium text-slate-700">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent mr-3" />
+
+              <ul className="space-y-2 mb-8 pt-6 border-t-2 border-border group-hover:border-background/20 transition-colors duration-150">
+                {service.features.map((feature, i) => (
+                  <li key={i} className="flex items-center gap-3 swiss-label text-muted-foreground group-hover:text-background/80 transition-colors duration-150">
+                    <span className="w-1.5 h-1.5 bg-accent" />
                     {feature}
-                  </div>
+                  </li>
                 ))}
-              </div>
-            </CardContent>
-            <CardFooter className="pt-0 border-t border-slate-100 pt-6 mt-auto">
-              <a href="#contact" className="inline-flex items-center text-sm font-bold text-primary hover:text-primary/80 transition-colors uppercase tracking-widest">
+              </ul>
+
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-between swiss-label text-accent gap-3 mt-auto"
+              >
                 Enquire
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
-            </CardFooter>
-          </Card>
-        ))}
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
-    </SectionWrapper>
+    </section>
   )
 }

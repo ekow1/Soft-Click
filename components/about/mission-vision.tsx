@@ -1,42 +1,65 @@
 import * as React from "react"
 import { Eye, Target } from "lucide-react"
 
-import { SectionWrapper } from "@/components/layout/section-wrapper"
-import { SectionHeading } from "@/components/shared/section-heading"
-import { Card, CardContent } from "@/components/ui/card"
-
 export function MissionVision() {
   return (
-    <SectionWrapper background="muted">
-      <SectionHeading title="Our Guiding Principles" align="center" />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        
-        <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white group rounded-3xl overflow-hidden">
-          <CardContent className="p-10 md:p-14 text-center flex flex-col items-center">
-            <div className="bg-primary/10 w-20 h-20 rounded-full flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300 relative">
-              <div className="absolute inset-0 rounded-full border border-primary/20 animate-ping group-hover:animate-none" />
-              <Target className="w-10 h-10 text-primary group-hover:text-white transition-colors" />
+    <section className="relative w-full bg-[#020617] text-white border-b-2 border-white/10 overflow-hidden swiss-noise">
+      <div className="absolute inset-0 swiss-grid-pattern opacity-[0.04] pointer-events-none" />
+
+      <div className="relative z-10 container mx-auto px-4 md:px-8 lg:px-12 py-20 md:py-28">
+
+        {/* Section Header */}
+        <div className="grid grid-cols-12 gap-4 md:gap-6 lg:gap-8 mb-16 lg:mb-20">
+          <div className="col-span-12 lg:col-span-3 flex items-center gap-4">
+            <span className="swiss-label text-accent">02 — Principles</span>
+            <span className="h-px flex-1 bg-white/20" />
+          </div>
+          <div className="col-span-12 lg:col-span-9">
+            <h2 className="swiss-headline text-white text-4xl md:text-5xl lg:text-6xl">
+              Our guiding <span className="text-white/40">principles.</span>
+            </h2>
+          </div>
+        </div>
+
+        {/* Mission + Vision Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 border-l-2 border-t-2 border-white/10">
+
+          {/* Mission */}
+          <div className="group relative border-r-2 border-b-2 border-white/10 p-10 md:p-14 transition-all duration-150 ease-linear hover:bg-white hover:text-[#020617]">
+            <span className="absolute top-6 right-6 swiss-headline text-5xl text-white/10 group-hover:text-[#020617]/10 transition-colors duration-150">01</span>
+
+            <div className="inline-flex p-4 swiss-border-thick border-white/20 group-hover:border-accent group-hover:bg-accent group-hover:text-accent-foreground mb-10 transition-all duration-150">
+              <Target className="w-7 h-7" />
             </div>
-            <h3 className="text-3xl font-extrabold text-slate-900 mb-6">Our Mission</h3>
-            <p className="text-lg text-slate-600 leading-relaxed font-medium">
+
+            <div className="swiss-label text-accent mb-3">Mission</div>
+            <h3 className="swiss-headline text-white group-hover:text-[#020617] text-3xl md:text-4xl mb-6 transition-colors duration-150">
+              Drive transformation.
+            </h3>
+            <p className="swiss-body text-white/60 group-hover:text-[#020617]/70 text-base md:text-lg leading-relaxed transition-colors duration-150">
               To drive digital transformation in Africa by providing modern, secure, and scalable enterprise technology solutions tailored to real-world business challenges.
             </p>
-          </CardContent>
-        </Card>
+          </div>
 
-        <Card className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white group rounded-3xl overflow-hidden">
-          <CardContent className="p-10 md:p-14 text-center flex flex-col items-center">
-            <div className="bg-accent/20 w-20 h-20 rounded-full flex items-center justify-center mb-8 group-hover:bg-accent transition-colors duration-300 relative">
-              <Eye className="w-10 h-10 text-accent-foreground group-hover:text-amber-950 transition-colors" />
+          {/* Vision */}
+          <div className="group relative border-r-2 border-b-2 border-white/10 p-10 md:p-14 transition-all duration-150 ease-linear hover:bg-accent hover:text-accent-foreground">
+            <span className="absolute top-6 right-6 swiss-headline text-5xl text-white/10 group-hover:text-accent-foreground/20 transition-colors duration-150">02</span>
+
+            <div className="inline-flex p-4 swiss-border-thick border-white/20 group-hover:border-accent-foreground group-hover:bg-accent-foreground group-hover:text-accent mb-10 transition-all duration-150">
+              <Eye className="w-7 h-7" />
             </div>
-            <h3 className="text-3xl font-extrabold text-slate-900 mb-6">Our Vision</h3>
-            <p className="text-lg text-slate-600 leading-relaxed font-medium">
+
+            <div className="swiss-label text-accent group-hover:text-accent-foreground mb-3">Vision</div>
+            <h3 className="swiss-headline text-white group-hover:text-accent-foreground text-3xl md:text-4xl mb-6 transition-colors duration-150">
+              Lead the region.
+            </h3>
+            <p className="swiss-body text-white/60 group-hover:text-accent-foreground/80 text-base md:text-lg leading-relaxed transition-colors duration-150">
               To be the premier technology partner for African corporations, recognized globally for innovation, robust engineering, and local market mastery.
             </p>
-          </CardContent>
-        </Card>
+          </div>
 
+        </div>
       </div>
-    </SectionWrapper>
+    </section>
   )
 }

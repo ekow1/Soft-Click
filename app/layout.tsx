@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
 import { SiteHeader } from "@/components/layout/site-header"
 import { SiteFooter } from "@/components/layout/site-footer"
+import { CustomCursor } from "@/components/shared/custom-cursor"
 
 const fontSans = JetBrains_Mono({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>
+          <CustomCursor />
           <div className="relative flex min-h-screen flex-col">
             <SiteHeader />
             <main className="flex-1">{children}</main>

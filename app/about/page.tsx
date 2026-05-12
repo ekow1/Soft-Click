@@ -9,9 +9,11 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        title="About SoftClick Solutions"
+        title="About SoftClick Solutions."
         description="Learn about our journey, our mission to empower African businesses, and the core values that drive our engineering excellence."
-        align="center"
+        align="left"
+        sectionNumber="00"
+        sectionLabel="About"
       />
       <CompanyStory />
       <MissionVision />
