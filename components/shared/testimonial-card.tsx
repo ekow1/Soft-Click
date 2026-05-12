@@ -24,7 +24,7 @@ export function TestimonialCard({
         <p className="text-lg md:text-xl text-muted-foreground italic leading-relaxed font-medium">
           &quot;{quote}&quot;
         </p>
-      </div>
+      </CardContent>
       <CardFooter className="p-0 mt-8 relative z-10 flex flex-col items-start space-y-1">
         <div className="font-bold text-foreground text-lg uppercase tracking-wide">
           {clientName}
