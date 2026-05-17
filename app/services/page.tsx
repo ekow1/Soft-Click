@@ -1,5 +1,5 @@
 import { PageHero } from "@/components/layout/page-hero"
-import { ServicesGrid } from "@/components/services/services-grid"
+import { ServicesAccordion } from "@/components/services/services-accordion"
 import { ServiceProcess } from "@/components/services/service-process"
 import { ServicesCtaSection } from "@/components/services/services-cta"
 
@@ -13,7 +13,7 @@ export default function ServicesPage() {
         sectionNumber="00"
         sectionLabel="Services"
       />
-      <ServicesGrid />
+      <ServicesAccordion />
       <ServiceProcess />
       <ServicesCtaSection />
     </>

@@ -5,46 +5,60 @@ import { ArrowRight, ChevronRight, Layers, CreditCard, ShieldCheck } from "lucid
 const enterpriseProducts = [
   {
     title: "GH Banker",
-    subtitle: "Core Banking Platform",
-    description: "A comprehensive, secure, and scalable banking solution tailored for Ghanaian financial institutions and rural banks. It handles end-to-end ledger management, customer onboarding, and inter-bank clearing.",
+    subtitle: "Complete Banking System",
+    description: "A comprehensive, secure, and scalable banking solution developed through wide consultation. It features multi-branch support, real-time financials, multi-level approvals, and SMS prompts.",
     features: [
-      "Secure Transaction Processing",
-      "Real-time Regulatory Reporting",
-      "Mobile Banking API Integration",
-      "Maker-Checker Authorization Workflows",
-      "Automated End-of-Day Reconciliation"
+      "Customer Information File (CIF)",
+      "Real-Time Financial Reports",
+      "Multi-Level Approvals",
+      "SMS & Mobile Banking Interfaced",
+      "Auto Roll-Back Database Security"
     ],
     icon: CreditCard,
     href: "/products/gh-banker",
     badge: "Flagship",
   },
   {
-    title: "PayrollPro System",
-    subtitle: "Enterprise Payroll Management",
-    description: "Automate complex payroll calculations, tax deductions, and compliance reporting with our cloud-native payroll engine designed specifically for large-scale workforces.",
+    title: "GH Sika Agent",
+    subtitle: "Mobile Banking Application",
+    description: "A complete, secured, and affordable revenue collection app for field agents. It enables real-time field data syncing, SMS alerts, and GPS location tracking to prevent under-reporting.",
     features: [
-      "Multi-currency & Multi-entity Support",
-      "GRA & SSNIT Compliant",
-      "Employee Self-Service Portal",
-      "Automated Payslip Generation",
-      "Bank Transfer Export Files"
+      "Customer Profile & Account Opening",
+      "Field Agent GPS Tracking",
+      "Instant SMS Prompt Receipts",
+      "Live Monitoring Activity Interface",
+      "Encrypted Local Database"
+    ],
+    icon: ShieldCheck,
+    href: "/products/gh-sika-agent",
+  },
+  {
+    title: "HR and Payroll System",
+    subtitle: "Enterprise Payroll Management",
+    description: "Customized Payroll Solution currently used by Labor Companies. Automate complex payroll calculations, tax deductions, and compliance reporting tailored to local laws.",
+    features: [
+      "Salary Crediting via GH Banker",
+      "Tax & Compliance Reporting",
+      "Automated Payslips",
+      "Employee Profile Management",
+      "Staff Loan Integration"
     ],
     icon: Layers,
     href: "/products/payroll-system",
   },
   {
-    title: "Custom Business Logic",
-    subtitle: "Tailored Enterprise Tooling",
-    description: "We build bespoke software platforms designed specifically to match your unique operational requirements, replacing rigid legacy systems with agile, cloud-native solutions.",
+    title: "GH Susu (GASCA)",
+    subtitle: "Susu Operations System",
+    description: "Customized mobile application tailored specifically for the Ghana Susu Association (GASCA), currently used by over 155 susu operators to manage collections smoothly.",
     features: [
-      "API Driven Architecture",
-      "Highly Scalable Databases",
-      "Custom Workflow Automation",
-      "Legacy System Integration",
-      "Role-Based Access Control (RBAC)"
+      "Daily Deposit Management",
+      "Agent Commission Tracking",
+      "Offline Synching Capabilities",
+      "Management Reports",
+      "Client Balance Enquiry"
     ],
-    icon: ShieldCheck,
-    href: "/products/custom-solutions",
+    icon: ChevronRight,
+    href: "/products/gh-susu",
   },
 ]
 

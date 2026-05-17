@@ -43,10 +43,10 @@ function Counter({ value, duration = 2000 }: { value: number, duration?: number 
 }
 
 const stats = [
-  { value: 15, suffix: "+", label: "Years of Excellence", desc: "Engineering since 2008" },
-  { value: 200, suffix: "+", label: "Systems Engineered", desc: "Across 14 industries" },
-  { value: 50, suffix: "+", label: "Enterprise Partners", desc: "Banks, Telcos, Energy" },
-  { value: 100, suffix: "%", label: "Mission Success", desc: "Zero failed deployments" },
+  { value: 185, suffix: "+", label: "Micro Credit Institutions", desc: "Active institutions managed" },
+  { value: 155, suffix: "+", label: "Susu Operators", desc: "Using GH Susu (GASCA)" },
+  { value: 8, suffix: "+", label: "Years of Excellence", desc: "Combined team experience" },
+  { value: 4, suffix: "+", label: "Key Flagship Products", desc: "Built for financial institutions" },
 ]
 
 export function StatsSection() {

@@ -34,10 +34,10 @@ export function MissionVision() {
 
             <div className="swiss-label text-accent mb-3">Mission</div>
             <h3 className="swiss-headline text-white group-hover:text-[#020617] text-3xl md:text-4xl mb-6 transition-colors duration-150">
-              Drive transformation.
+              Identify & Address Gaps.
             </h3>
             <p className="swiss-body text-white/60 group-hover:text-[#020617]/70 text-base md:text-lg leading-relaxed transition-colors duration-150">
-              To drive digital transformation in Africa by providing modern, secure, and scalable enterprise technology solutions tailored to real-world business challenges.
+              We aspire to identify and address business gaps in financial technology and build high-quality, tailored software solutions for financial institutions.
             </p>
           </div>
 
@@ -51,10 +51,10 @@ export function MissionVision() {
 
             <div className="swiss-label text-accent group-hover:text-accent-foreground mb-3">Vision</div>
             <h3 className="swiss-headline text-white group-hover:text-accent-foreground text-3xl md:text-4xl mb-6 transition-colors duration-150">
-              Lead the region.
+              The Preferred Provider.
             </h3>
             <p className="swiss-body text-white/60 group-hover:text-accent-foreground/80 text-base md:text-lg leading-relaxed transition-colors duration-150">
-              To be the premier technology partner for African corporations, recognized globally for innovation, robust engineering, and local market mastery.
+              Our vision is to become the preferred banking software solutions provider in Ghana and across Africa.
             </p>
           </div>
 

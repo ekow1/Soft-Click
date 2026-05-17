@@ -3,24 +3,19 @@ import { Globe, Mail } from "lucide-react"
 
 const leaders = [
   {
-    name: "John K. Appiah",
-    role: "Chief Executive Officer",
-    image: "HEADSHOT PLACEHOLDER",
+    name: "William Kofi Oye",
+    role: "Managing Director & Partner",
+    image: "/images/about/william_oye.png",
   },
   {
-    name: "Dr. Sarah Mensah",
-    role: "Chief Technology Officer",
-    image: "HEADSHOT PLACEHOLDER",
+    name: "Francis Banini",
+    role: "Solution Architecture & Partner",
+    image: "/images/about/francis_banini.png",
   },
   {
-    name: "Kwame Asare",
-    role: "VP of Engineering",
-    image: "HEADSHOT PLACEHOLDER",
-  },
-  {
-    name: "Ama Serwaa",
-    role: "Director of Delivery",
-    image: "HEADSHOT PLACEHOLDER",
+    name: "Kristotro Amoah",
+    role: "Senior Developer & Partner",
+    image: "/images/about/kristotro_amoah.png",
   },
 ]
 
@@ -46,15 +41,17 @@ export function LeadershipSection() {
         </div>
 
         {/* Leaders Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-l-2 border-t-2 border-border">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-l-2 border-t-2 border-border">
           {leaders.map((leader, index) => (
             <div key={index} className="group relative border-r-2 border-b-2 border-border bg-background">
               {/* Image */}
               <div className="relative aspect-[3/4] bg-muted overflow-hidden">
-                <div className="absolute inset-0 swiss-dots opacity-30" />
-                <div className="absolute inset-0 flex items-center justify-center swiss-label text-muted-foreground text-center p-4">
-                  {leader.image}
-                </div>
+                <img 
+                  src={leader.image} 
+                  alt={leader.name} 
+                  className="absolute inset-0 w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" 
+                />
+                <div className="absolute inset-0 swiss-dots opacity-20 pointer-events-none" />
 
                 {/* Number badge */}
                 <div className="absolute top-0 left-0 bg-foreground text-background w-10 h-10 flex items-center justify-center swiss-label">

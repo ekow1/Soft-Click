@@ -33,7 +33,7 @@ export function CompanyStory() {
               </div>
               {/* Bottom-right year badge */}
               <div className="absolute -bottom-px -right-px bg-accent text-accent-foreground p-8 md:p-10 swiss-border-thick border-accent">
-                <div className="swiss-headline text-5xl md:text-6xl mb-2">2015</div>
+                <div className="swiss-headline text-5xl md:text-6xl mb-2">2018</div>
                 <div className="swiss-label text-accent-foreground/70">
                   Year Established
                 </div>
@@ -45,13 +45,13 @@ export function CompanyStory() {
           <div className="col-span-12 lg:col-span-7 lg:pl-8 flex flex-col gap-6 border-l-2 border-border pl-8">
             <div className="space-y-6 swiss-body text-foreground text-base md:text-lg">
               <p>
-                Founded with the vision to bridge the local technology gap, <strong className="font-black">SoftClick Solutions Limited</strong> emerged as a response to the growing need for high-quality, enterprise-grade software in the West African sub-region.
+                <strong className="font-black">SoftClick Solutions Limited</strong> was formed by three partners and incorporated on March 12, 2018. We are a multi-disciplinary company with a core mandate to customize systems that directly address local financial operations.
               </p>
               <p className="text-muted-foreground">
-                We realized early on that off-the-shelf software rarely fit the unique regulatory and operational needs of African corporations. Our mission became clear: build scalable, secure, and custom-tailored digital infrastructure that empowers local businesses to operate on a global standard.
+                Our approach involves actively discussing with clients, carrying out extensive research, and consulting with charted bankers, auditors, and Central Bank supervisors. This ensures our software is highly tailored to the specific rules and regulations of the region.
               </p>
               <p className="text-muted-foreground">
-                Today, we are proud to be the trusted technology partner for numerous rural banks, government agencies, and Fortune 500 enterprises operating within the region.
+                Today, SoftClick proudly manages systems for over 185 Micro Credit institutions, 2 Micro Finance companies, 2 Credit Unions, and provides customized applications for 155 Susu operators.
               </p>
             </div>
           </div>

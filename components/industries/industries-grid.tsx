@@ -3,40 +3,34 @@ import { Building2, Store, Landmark, ShoppingCart, Landmark as GovernmentIcon, G
 
 const industriesData = [
   {
-    name: "Banking & Finance",
+    name: "Rural Banks",
     icon: Landmark,
-    description: "Core banking platform modernization, secure payment gateways, and regulatory reporting systems built for strict compliance and scale.",
-    features: ["Core Banking Systems", "Fintech Integrations", "Fraud Detection"],
+    description: "Core banking platforms specifically tailored to handle rural operations, offline synching, and local compliance requirements.",
+    features: ["Offline Synchronization", "Local Compliance", "Agency Banking"],
   },
   {
-    name: "Government & Public Sector",
-    icon: GovernmentIcon,
-    description: "Nation-scale citizen identity portals, revenue collection systems, and integrated public service platforms.",
-    features: ["Citizen Identity Portals", "Tax Collection Engines", "Secure Interoperability"],
-  },
-  {
-    name: "Trade & Commerce",
-    icon: ShoppingCart,
-    description: "End-to-end local and cross-border ecommerce platforms, supply chain logistics, and B2B ordering systems.",
-    features: ["B2B Portals", "Supply Chain Tracking", "Inventory Management"],
-  },
-  {
-    name: "Agriculture",
+    name: "Microfinance",
     icon: Building2,
-    description: "Agri-tech solutions connecting rural cooperatives with urban markets, tracking logistics, and managing yield data.",
-    features: ["Farm-to-Market Tracking", "Yield Analytics", "Mobile Field Apps"],
+    description: "Robust solutions for microfinance institutions to manage high-volume, low-value transactions and field collections efficiently.",
+    features: ["Loan Portfolio Management", "Field Agent Tracking", "Customer Information File"],
   },
   {
-    name: "Education",
-    icon: GraduationCap,
-    description: "Campus management systems tailored to African institutions, handling admissions to alumni management.",
-    features: ["E-Learning Portals", "Student Information Systems", "Result Processing"],
-  },
-  {
-    name: "SMEs & Startups",
+    name: "Micro Credit Institutions",
     icon: Store,
-    description: "Agile, scalable infrastructure enabling growing businesses to automate their distinct operational workflows rapidly.",
-    features: ["Custom Web Apps", "Cloud Migrations", "Process Automation"],
+    description: "Agile software providing rapid loan processing, group loans management, and detailed recovery reports.",
+    features: ["Rapid Loan Processing", "Group Loans", "Recovery Reporting"],
+  },
+  {
+    name: "Savings & Loans Companies",
+    icon: GovernmentIcon,
+    description: "Comprehensive financial suites managing fixed deposits, current accounts, and complex placement management.",
+    features: ["Fixed Deposit Modules", "Placement Management", "Real-Time Ledgers"],
+  },
+  {
+    name: "Credit Unions",
+    icon: GraduationCap,
+    description: "Member-focused platforms handling share accounts, customized BOG reporting, and automated dividend distribution.",
+    features: ["Members Shares Account", "Customized Reporting", "Automated Dividends"],
   },
 ]
 

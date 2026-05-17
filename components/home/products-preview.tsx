@@ -9,29 +9,38 @@ const products = [
   {
     id: "banker",
     title: "GH Banker",
-    subtitle: "Core Banking Platform",
-    description: "A comprehensive, secure, and scalable banking solution tailored for Ghanaian financial institutions and rural banks.",
-    features: ["Secure Transactions", "Real-time Reporting", "Mobile Banking"],
+    subtitle: "Complete Banking System",
+    description: "An integrated module of banking solutions designed for financial institutions including loans, realtime reports, and multi-branch support.",
+    features: ["Loans & Savings", "Real Time Reports", "Multi-Level Approvals"],
     image: "/images/products/gh-banker.png",
     href: "/products/gh-banker",
   },
   {
-    id: "payroll",
-    title: "PayrollPro System",
-    subtitle: "Enterprise Payroll Management",
-    description: "Automate complex payroll calculations, tax deductions, and compliance reporting with our cloud-native payroll engine.",
-    features: ["Multi-currency", "GRA Compliant", "Self-Service"],
+    id: "sika-agent",
+    title: "GH Sika Agent",
+    subtitle: "Mobile App for Field Collection",
+    description: "A complete, secured and affordable revenue collection app with GPS tracking, real-time SMS alerts, and offline capabilities.",
+    features: ["Field Agent Tracking", "Instant SMS Prompt", "Balance Enquiry"],
     image: "/images/products/payroll-pro.png",
+    href: "/products/gh-sika-agent",
+  },
+  {
+    id: "payroll",
+    title: "HR & Payroll System",
+    subtitle: "Human Resource and Payroll",
+    description: "Customized Payroll Solution used by Labor Companies to manage employees, process salaries, and handle organizational structuring.",
+    features: ["Salary Processing", "Employee Management", "Custom Reports"],
+    image: "/images/products/custom-logic.png",
     href: "/products/payroll-system",
   },
   {
-    id: "custom",
-    title: "Custom Business Logic",
-    subtitle: "Tailored Enterprise Tooling",
-    description: "We build bespoke software platforms designed specifically to match your unique operational requirements and workflows.",
-    features: ["API Driven", "Scalable", "Secure Arch"],
-    image: "/images/products/custom-logic.png",
-    href: "/products/custom-solutions",
+    id: "susu",
+    title: "GH Susu (GASCA)",
+    subtitle: "Susu Operations Management",
+    description: "Customized mobile applications for GASCA currently being used by over 155 susu operators to manage daily collections efficiently.",
+    features: ["Daily Collections", "Agent Tracking", "Secure Backup"],
+    image: "/images/hero/hero-bg.png",
+    href: "/products/gh-susu",
   },
 ]
 
@@ -90,8 +99,9 @@ export function ProductsPreview() {
                         isActive ? "bg-accent text-accent-foreground border-accent" : "bg-background text-muted-foreground border-border group-hover:border-foreground"
                       )}>
                         {product.id === "banker" && <CreditCard className="h-5 w-5" />}
+                        {product.id === "sika-agent" && <ShieldCheck className="h-5 w-5" />}
                         {product.id === "payroll" && <Layers className="h-5 w-5" />}
-                        {product.id === "custom" && <ShieldCheck className="h-5 w-5" />}
+                        {product.id === "susu" && <Plus className="h-5 w-5" />}
                       </div>
                       <h3 className={cn(
                         "swiss-headline text-xl md:text-2xl transition-colors duration-150",

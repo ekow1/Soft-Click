@@ -10,6 +10,7 @@ const caseStudies = [
     challenge: "The bank was experiencing high legacy infrastructure maintenance costs and frequent clearing delays with inter-bank transactions.",
     solution: "We designed and implemented a microservices-based payment processing engine deployed on scalable cloud infrastructure, handling over 1M transactions daily.",
     impact: "Reduced processing latency by 40% and decreased infrastructure IT overhead by 22% within the first year.",
+    image: "/images/projects/payment-gateway.png",
     href: "/projects/payment-gateway",
   },
   {
@@ -19,6 +20,7 @@ const caseStudies = [
     challenge: "Fragmented database systems led to duplicated records and a slow, frustrating onboarding experience for citizens accessing public services.",
     solution: "A secure, nationwide digital identity portal integrating with legacy mainframe databases via custom API gateways, serving millions of citizens.",
     impact: "Streamlined registration by 60%, eliminating 1.5M duplicate records through automated biometric matching.",
+    image: "/images/projects/identity-portal.png",
     href: "/projects/identity-portal",
   },
   {
@@ -28,6 +30,7 @@ const caseStudies = [
     challenge: "Lack of visibility tracking agricultural yields from rural farms to urban centers resulted in high perishability rates and revenue loss.",
     solution: "End-to-end supply chain visibility tool built with offline-first mobile applications for rural field officers, syncing to a centralized real-time dashboard.",
     impact: "Cut supply chain delays by 25% and reduced crop spoilage incidents by 18% in the first harvest season.",
+    image: "/images/projects/agri-logistics.png",
     href: "/projects/agri-logistics",
   },
   {
@@ -37,6 +40,7 @@ const caseStudies = [
     challenge: "SMEs struggled to find reliable wholesale suppliers across regional borders with secure escrow payment options.",
     solution: "A robust B2B e-commerce platform featuring multi-currency wallets, vendor verification, and integrated logistics tracking.",
     impact: "Facilitated over $50M in cross-border trade volume within 18 months of launch.",
+    image: "/images/projects/tradelink.png",
     href: "/projects/tradelink",
   },
 ]
@@ -71,8 +75,13 @@ export function CaseStudiesGrid() {
             >
               {/* Top visual */}
               <div className="h-48 bg-muted/40 border-b-2 border-border relative overflow-hidden group-hover:border-background/20 transition-colors duration-150">
-                <div className="absolute inset-0 swiss-dots opacity-30" />
-                <div className="absolute inset-0 flex items-center justify-center">
+                <img 
+                  src={study.image} 
+                  alt={study.title} 
+                  className="absolute inset-0 w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300"
+                />
+                <div className="absolute inset-0 swiss-dots opacity-20 pointer-events-none" />
+                <div className="absolute top-0 left-0">
                   <div className="bg-foreground text-background swiss-border-thick border-foreground px-6 py-4 swiss-label">
                     PROJECT 0{index + 1}
                   </div>

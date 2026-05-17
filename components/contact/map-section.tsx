@@ -33,10 +33,10 @@ export function MapSection() {
                   <div className="bg-foreground text-background swiss-border-thick border-foreground p-6 max-w-xs">
                      <div className="swiss-label text-accent mb-3">Accra Office</div>
                      <h3 className="swiss-headline text-background text-lg mb-2">
-                        15 Independence Avenue
+                        Slate CL
                      </h3>
                      <p className="swiss-label text-background/60">
-                        Ridge, GA-012-3456
+                        Accra, GA-298-2041
                      </p>
                   </div>
                </div>

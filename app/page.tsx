@@ -5,6 +5,7 @@ import { AboutPreview } from "@/components/home/about-preview"
 import { ProductsPreview } from "@/components/home/products-preview"
 import { PartnerSection } from "@/components/home/partner-section"
 import { ProcessSection } from "@/components/home/process-section"
+import { VideoSection } from "@/components/home/video-section"
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <StatsSection />
       <AboutPreview />
       <ProductsPreview />
+      <VideoSection />
       <PartnerSection />
       <ProcessSection />
     </>

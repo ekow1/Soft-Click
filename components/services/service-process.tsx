@@ -4,36 +4,36 @@ import { CheckCircle2 } from "lucide-react"
 const serviceProcessSteps = [
   {
     title: "Discovery Session",
-    description: "We discuss your business needs, technical constraints, and long-term vision.",
-    deliverables: ["Needs Assessment", "Feasibility Study"],
+    description: "We discuss your institutional needs, regulatory constraints, and operational workflows with your stakeholders.",
+    deliverables: ["Needs Assessment", "Regulatory Feasibility Study"],
   },
   {
     title: "System Design",
-    description: "Our architects map out scalable systems, APIs, and data models before code is written.",
-    deliverables: ["Architecture Diagram", "UX Wireframes", "Tech Stack Proposal"],
+    description: "Our architects map out scalable financial systems, secure APIs, and encrypted data models before writing any code.",
+    deliverables: ["Architecture Diagram", "UX Wireframes", "Security Proposal"],
   },
   {
     title: "Agile Development",
-    description: "Sprints deliver functional software increments regularly, ensuring constant alignment.",
+    description: "We build functional software increments, keeping your team aligned with constant updates and transparent progress.",
     deliverables: ["Two-week Sprints", "Staging Environments", "Code Reviews"],
   },
   {
     title: "Testing & QA",
-    description: "Rigorous automation testing, penetration testing, and load testing ensure robust performance.",
+    description: "Rigorous automation, penetration testing, and compliance checks ensure the system meets strict banking standards.",
     deliverables: ["Test Coverage Reports", "Security Audits", "UAT Sign-off"],
   },
   {
     title: "Launch & Support",
-    description: "Zero-downtime deployment, infrastructure monitoring, and post-launch SLAs.",
-    deliverables: ["Production Deployment", "SLA Agreement", "System Monitoring"],
+    description: "Zero-downtime deployment across your branches, continuous infrastructure monitoring, and dedicated SLAs.",
+    deliverables: ["Branch Deployment", "SLA Agreement", "Live System Monitoring"],
   },
 ]
 
 const enterpriseGuarantees = [
-  "Predictable delivery timelines",
-  "Transparent communication channels",
-  "Strict security and compliance audits",
-  "Scalable containerized architecture",
+  "Strict adherence to Central Bank regulations",
+  "Bank-grade data encryption and security audits",
+  "Predictable delivery and transparent communication",
+  "Automated disaster recovery and cloud backups",
 ]
 
 export function ServiceProcess() {

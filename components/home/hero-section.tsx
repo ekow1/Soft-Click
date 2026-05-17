@@ -5,11 +5,11 @@ import { Code, LayoutDashboard, Network, Cloud, Briefcase, ArrowRight } from "lu
 import { Button } from "@/components/ui/button"
 
 const services = [
-  { icon: Code, label: "Enterprise Software" },
-  { icon: LayoutDashboard, label: "Web & Mobile" },
+  { icon: Code, label: "Software Application Dev" },
+  { icon: LayoutDashboard, label: "IT Advisory & Consulting" },
   { icon: Network, label: "Systems Integration" },
-  { icon: Cloud, label: "Cloud & DevOps" },
-  { icon: Briefcase, label: "IT Consulting" },
+  { icon: Cloud, label: "Cloud Hosting" },
+  { icon: Briefcase, label: "Networking Services" },
 ]
 
 export function HomeHeroSection() {
@@ -51,7 +51,7 @@ export function HomeHeroSection() {
                 Digital Transformation
               </div>
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-transparent text-white border-2 border-white/30 swiss-label">
-                15+ Years of Excellence
+                Established 2018
               </div>
             </div>
           </div>
@@ -74,7 +74,7 @@ export function HomeHeroSection() {
             <div className="col-span-12 lg:col-span-4 flex flex-col gap-8">
               <div className="border-l-4 border-accent pl-6">
                 <p className="swiss-body text-white/80 text-base md:text-lg">
-                  A legacy of engineering mission-critical systems that bridge complex business challenges with elegant technology.
+                  Specializing in customized ICT and software solutions for businesses of all sizes, combining industry expertise with modern technology.
                 </p>
               </div>
 

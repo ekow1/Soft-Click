@@ -6,17 +6,17 @@ import { Building2, Mail, Phone, Clock } from "lucide-react"
 const contactDetails = [
   {
     title: "Headquarters",
-    details: ["15 Independence Avenue", "Ridge, Accra", "Ghana, GA-012-3456"],
+    details: ["Slate CL", "Accra", "Ghana, GA-298-2041"],
     icon: Building2,
   },
   {
     title: "Phone",
-    details: ["Sales: +233 (0) 55 123 4567", "Support: +233 (0) 30 987 6543", "Toll-Free: 0800 123 456"],
+    details: ["Primary: 020 880 2904", "Secondary: 024 263 6937", "Support Available"],
     icon: Phone,
   },
   {
     title: "Email",
-    details: ["enterprise@softclick.com", "support@softclick.com", "careers@softclick.com"],
+    details: ["softclickgh@gmail.com", "owilliam18@gmail.com"],
     icon: Mail,
   },
   {

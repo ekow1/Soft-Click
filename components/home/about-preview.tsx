@@ -46,11 +46,11 @@ function Counter({ value, duration = 2000 }: { value: number, duration?: number 
   return <span ref={elementRef}>{count}</span>
 }
 
-const stats = [
-  { label: "Years of Excellence", value: 10, suffix: "+" },
-  { label: "Systems Engineered", value: 200, suffix: "+" },
-  { label: "Mission Success", value: 100, suffix: "%" },
-  { label: "Enterprise Partners", value: 50, suffix: "+" },
+const coreValues = [
+  { label: "Core Value", value: "Creativity" },
+  { label: "Core Value", value: "Innovation" },
+  { label: "Core Value", value: "Professionalism" },
+  { label: "Core Value", value: "Teamwork" },
 ]
 
 export function AboutPreview() {
@@ -71,7 +71,7 @@ export function AboutPreview() {
           <div className="col-span-12 lg:col-span-9">
             <h2 className="swiss-headline text-white text-5xl md:text-6xl lg:text-7xl">
               Engineering the future <br />
-              <span className="text-white/40">of African business.</span>
+              <span className="text-white/40">of banking in Ghana and Africa.</span>
             </h2>
           </div>
         </div>
@@ -89,12 +89,12 @@ export function AboutPreview() {
               />
               {/* Top-left meta */}
               <div className="absolute top-0 left-0 bg-white text-[#020617] px-4 py-2 swiss-label">
-                Team — 2008
+                Team — 2018
               </div>
               {/* Bottom-right experience badge */}
               <div className="absolute -bottom-px -right-px bg-accent text-accent-foreground p-8 md:p-10 swiss-border-thick border-accent">
                 <div className="swiss-headline text-5xl md:text-6xl mb-2">
-                  <Counter value={15} />+
+                  <Counter value={8} />+
                 </div>
                 <div className="swiss-label text-accent-foreground/70 max-w-[140px]">
                   Years of Technical Mastery
@@ -107,12 +107,12 @@ export function AboutPreview() {
           <div className="col-span-12 lg:col-span-7 lg:pl-8 flex flex-col gap-10">
 
             <p className="swiss-body text-white/70 text-lg md:text-xl border-l-4 border-accent pl-6 max-w-2xl">
-              SoftClick Solutions is more than a software house. We are a digital powerhouse committed to solving complex enterprise challenges with elegant, high-throughput engineering.
+              SoftClick Solutions Limited is a wholly Ghanaian owned multi-disciplinary company that specializes in customized ICT and software solutions. We combine industry expertise with modern technology to create competitive digital solutions for financial institutions.
             </p>
 
-            {/* Stats - Swiss grid with thick borders */}
+            {/* Core Values - Swiss grid with thick borders */}
             <div className="grid grid-cols-2 border-l-2 border-t-2 border-white/10">
-              {stats.map((stat, i) => (
+              {coreValues.map((val, i) => (
                 <div
                   key={i}
                   className="group/stat border-r-2 border-b-2 border-white/10 p-6 md:p-8 transition-all duration-150 hover:bg-white hover:text-[#020617]"
@@ -120,11 +120,11 @@ export function AboutPreview() {
                   <div className="swiss-label text-accent group-hover/stat:text-accent mb-4">
                     0{i + 1}
                   </div>
-                  <div className="swiss-headline text-4xl md:text-5xl mb-2">
-                    <Counter value={stat.value} />{stat.suffix}
+                  <div className="swiss-headline text-2xl md:text-3xl lg:text-4xl mb-2">
+                    {val.value}
                   </div>
                   <div className="swiss-label text-white/60 group-hover/stat:text-[#020617]/60">
-                    {stat.label}
+                    {val.label}
                   </div>
                 </div>
               ))}

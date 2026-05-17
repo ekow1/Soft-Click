@@ -3,23 +3,23 @@ import { Award, HeartHandshake, Lightbulb, ShieldCheck } from "lucide-react"
 
 const values = [
   {
-    title: "Excellence",
-    description: "We are committed to delivering world-class engineering, prioritizing performance, scalability, and clean code above all else.",
-    icon: Award,
-  },
-  {
-    title: "Integrity",
-    description: "Transparency and honesty define our client relationships. We build trust by delivering exactly what we promise, securely.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Innovation",
-    description: "We constantly research, test, and adopt emerging technologies to ensure our clients always maintain a competitive edge.",
+    title: "Creativity",
+    description: "We think outside the box to deliver unique interfaces and processes that set our software apart in the financial industry.",
     icon: Lightbulb,
   },
   {
-    title: "Partnership",
-    description: "Your team's success is our success. We integrate closely with your internal stakeholders to drive true, lasting impact.",
+    title: "Innovative",
+    description: "We are constantly researching and adopting emerging technologies to ensure our clients maintain a competitive edge.",
+    icon: Award,
+  },
+  {
+    title: "Professionalism",
+    description: "Transparency, honesty, and expert conduct define our client relationships. We deliver exactly what we promise.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Teamwork",
+    description: "Your team's success is our success. We integrate closely with internal stakeholders to drive true impact.",
     icon: HeartHandshake,
   },
 ]

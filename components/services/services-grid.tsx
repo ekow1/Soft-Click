@@ -4,52 +4,40 @@ import { ArrowRight, Code, LayoutDashboard, Cloud, Network, Briefcase, Database,
 
 const detailedServices = [
   {
-    title: "Enterprise Software Architecture",
-    description: "End-to-end design and development of monolithic and microservices-based software infrastructure built specifically for scale and high concurrency.",
+    title: "Software Application Development",
+    description: "We undertake full-cycle software development. By consulting with charted bankers and auditors, we build bespoke, robust systems that address distinct gaps in financial technology and handle high transaction volumes securely.",
     icon: Code,
-    features: ["Domain-Driven Design", "Microservices", "Event-Driven Architecture"],
+    features: ["Bespoke Financial Software", "Regulatory Requirement Analysis", "Agile & Secure Development"],
   },
   {
-    title: "Full-Stack Web Development",
-    description: "Building responsive, highly performant web applications using modern React, Next.js, and server-side rendering technologies.",
-    icon: LayoutDashboard,
-    features: ["React & Next.js", "Progressive Web Apps", "Accessibility Compliance"],
-  },
-  {
-    title: "Native Mobile Applications",
-    description: "iOS and Android apps developed for speed and engagement, seamlessly integrating with your backend APIs.",
-    icon: Smartphone,
-    features: ["React Native", "Swift & Kotlin", "Offline-First Sync"],
-  },
-  {
-    title: "Cloud Infrastructure & DevOps",
-    description: "Design and deployment of scalable CI/CD pipelines, container orchestration, and multi-cloud strategies.",
-    icon: Cloud,
-    features: ["AWS / Azure / GCP", "Kubernetes", "Infrastructure as Code"],
-  },
-  {
-    title: "Systems Integration",
-    description: "We securely connect disparate legacy systems, core banking platforms, and modern APIs using enterprise service buses and gateways.",
-    icon: Network,
-    features: ["API Gateways", "Legacy System Modernization", "Secure Data Pipelines"],
-  },
-  {
-    title: "Big Data & Analytics",
-    description: "Implement data lakes and real-time processing engines to derive actionable intelligence from massive corporate datasets.",
-    icon: Database,
-    features: ["Data Warehousing", "Machine Learning", "Real-time Dashboards"],
-  },
-  {
-    title: "Information Security",
-    description: "Securing your applications with industry-standard encryption, identity management, and continuous vulnerability assessments.",
-    icon: Lock,
-    features: ["Penetration Testing", "Identity Access Management", "Compliance Auditing"],
-  },
-  {
-    title: "IT Strategy Consulting",
-    description: "Advising C-suite leadership on digital transformation roadmaps, technology procurement, and vendor management.",
+    title: "IT Advisory & Consultation",
+    description: "Our seasoned consultants audit your existing infrastructure, identify technology gaps, and architect robust IT roadmaps that align with Central Bank regulations and modern industry best practices.",
     icon: Briefcase,
-    features: ["Digital Transformation", "Vendor Evaluation", "Tech Auditing"],
+    features: ["Strategic IT Roadmaps", "Central Bank Compliance Audits", "Infrastructure Vendor Management"],
+  },
+  {
+    title: "System Integration Services",
+    description: "We seamlessly connect your core platforms with vital third-party applications. Our services provide encrypted pipelines linking your systems to Mobile Money, E-Zwich, and national payment gateways.",
+    icon: Network,
+    features: ["Mobile Money Integration", "E-Zwich & Payment Gateways", "Secure API Bridging"],
+  },
+  {
+    title: "Cloud Hosting Services",
+    description: "We provide highly secure, encrypted, and accessible cloud environments tailored for financial institutions. Our hosting guarantees continuous availability, backed by automated disaster recovery.",
+    icon: Cloud,
+    features: ["Encrypted Cloud Storage", "Disaster Recovery Sync", "High Availability Servers"],
+  },
+  {
+    title: "Networking Services",
+    description: "We design and implement robust Wide Area Networks (WAN) that securely link your head office with multiple branch locations, ensuring low-latency communication and centralized data access.",
+    icon: Database,
+    features: ["Secure WAN Configuration", "Branch Interconnectivity", "Network Access Control"],
+  },
+  {
+    title: "ICT Support Services",
+    description: "Our commitment extends beyond deployment. We offer comprehensive ongoing support, including rigorous user training, system troubleshooting, and routine feature updates to adapt to market trends.",
+    icon: Smartphone,
+    features: ["Comprehensive Staff Training", "Routine System Updates", "24/7 Technical Troubleshooting"],
   },
 ]
 
