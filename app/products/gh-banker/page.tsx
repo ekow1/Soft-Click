@@ -233,6 +233,11 @@ export default function GHBankerPage() {
                 title: "Real-Time Reporting",
                 subtitle: "GL, Balance Sheet & Trial Balance",
                 image: "/images/products/custom-logic.png"
+              },
+              {
+                title: "Loan Management",
+                subtitle: "Applications, Approvals & Disbursement",
+                image: "/images/projects/agri-logistics.png" // Reusing a nice image for demonstration
               }
             ]}
           />

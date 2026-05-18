@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { ArrowRight, Plus, X, Layers, CreditCard, ShieldCheck } from "lucide-react"
+import { ArrowRight, Plus, X, Layers, CreditCard, ShieldCheck, Play } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const products = [
@@ -145,12 +145,12 @@ export function ProductsPreview() {
 
           {/* Right: Preview Area */}
           <div className="col-span-12 lg:col-span-7 lg:sticky lg:top-32">
-            <div className="relative aspect-[16/10] swiss-border-thick bg-muted/30 overflow-hidden">
+            <div className="group relative aspect-[16/10] swiss-border-thick bg-muted/30 overflow-hidden cursor-pointer shadow-2xl">
               {products.map((product) => (
                 <div
                   key={product.id}
                   className={cn(
-                    "absolute inset-0 transition-opacity duration-150 ease-linear",
+                    "absolute inset-0 transition-opacity duration-500 ease-linear",
                     activeId === product.id
                       ? "opacity-100 pointer-events-auto"
                       : "opacity-0 pointer-events-none"
@@ -159,17 +159,30 @@ export function ProductsPreview() {
                   <img
                     src={product.image}
                     alt={product.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-700 ease-out"
                   />
                 </div>
               ))}
 
-              {/* Swiss-style label overlay */}
-              <div className="absolute top-0 left-0 bg-foreground text-background px-4 py-2 swiss-label">
-                {products.find(p => p.id === activeId)?.subtitle}
+              <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors duration-500 pointer-events-none" />
+              
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-white flex items-center justify-center scale-100 group-hover:scale-110 group-hover:bg-accent group-hover:border-accent transition-all duration-300 shadow-2xl">
+                  <Play className="w-6 h-6 md:w-8 md:h-8 ml-1.5" fill="currentColor" />
+                </div>
               </div>
-              <div className="absolute bottom-0 right-0 bg-accent text-accent-foreground px-6 py-3 swiss-label">
-                {products.find(p => p.id === activeId)?.title}
+
+              {/* Video Title Overlays */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent pointer-events-none">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="px-2 py-1 text-[10px] uppercase tracking-widest font-bold bg-accent text-accent-foreground">Product Overview</span>
+                </div>
+                <h3 className="swiss-headline text-3xl md:text-4xl text-white mb-2 tracking-tight">
+                  {products.find(p => p.id === activeId)?.title}
+                </h3>
+                <p className="swiss-label text-white/80 text-sm md:text-base font-medium">
+                  {products.find(p => p.id === activeId)?.subtitle}
+                </p>
               </div>
             </div>
           </div>

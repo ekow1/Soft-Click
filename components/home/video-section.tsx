@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Play } from "lucide-react"
+import { VideoCarousel } from "@/components/products/video-carousel"
 
 export function VideoSection() {
   return (
@@ -26,44 +26,26 @@ export function VideoSection() {
           </div>
         </div>
 
-        {/* Video Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-          {/* Video Placeholder 1 */}
-          <div className="group relative aspect-video bg-muted/20 border-2 border-white/10 overflow-hidden cursor-pointer">
-            <img 
-              src="/images/hero/hero-bg.png" 
-              alt="Video Thumbnail" 
-              className="w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-300 grayscale group-hover:grayscale-0"
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-16 h-16 rounded-full bg-accent text-accent-foreground flex items-center justify-center scale-100 group-hover:scale-110 transition-transform duration-300">
-                <Play className="w-6 h-6 ml-1" fill="currentColor" />
-              </div>
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-              <h3 className="swiss-headline text-lg">GH Banker Overview</h3>
-              <p className="swiss-label text-white/70 text-sm">Product Demo</p>
-            </div>
-          </div>
-
-          {/* Video Placeholder 2 */}
-          <div className="group relative aspect-video bg-muted/20 border-2 border-white/10 overflow-hidden cursor-pointer">
-            <img 
-              src="/images/about/team.png" 
-              alt="Video Thumbnail" 
-              className="w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity duration-300 grayscale group-hover:grayscale-0"
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-16 h-16 rounded-full bg-accent text-accent-foreground flex items-center justify-center scale-100 group-hover:scale-110 transition-transform duration-300">
-                <Play className="w-6 h-6 ml-1" fill="currentColor" />
-              </div>
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-              <h3 className="swiss-headline text-lg">GH Sika Agent in the Field</h3>
-              <p className="swiss-label text-white/70 text-sm">Customer Success</p>
-            </div>
-          </div>
-        </div>
+        {/* Premium Video Carousel */}
+        <VideoCarousel 
+          items={[
+            {
+              title: "GH Banker Overview",
+              subtitle: "The Complete Core Banking Engine",
+              image: "/images/hero/hero-bg.png"
+            },
+            {
+              title: "GH Sika Agent in the Field",
+              subtitle: "Mobile Collections & GPS Tracking",
+              image: "/images/about/team.png"
+            },
+            {
+              title: "Enterprise Security Architecture",
+              subtitle: "Audit Trails & Multi-Level Approvals",
+              image: "/images/products/custom-logic.png"
+            }
+          ]}
+        />
 
       </div>
     </section>
