@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoftClick Solutions Ltd — Coming Soon</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            term: {
+              bg: '#0c1222',
+              panel: '#111827',
+              border: '#1e293b',
+              blue: '#3b82f6',
+              blueLight: '#60a5fa',
+              text: '#e2e8f0',
+              muted: '#64748b',
+              green: '#22c55e',
+              amber: '#f59e0b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'JetBrains Mono', monospace; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(16px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .slide-up {
+      opacity: 0;
+      animation: slideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    @keyframes flip {
+      0% { transform: rotateX(0deg); }
+      50% { transform: rotateX(90deg); color: #60a5fa; }
+      100% { transform: rotateX(0deg); }
+    }
+    .flip-change { animation: flip 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+    .terminal-flat {
+      box-shadow: none;
+    }
+
+    ::selection { background: rgba(59,130,246,0.25); color: #fff; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0c1222; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 3px; }
+  </style>
+</head>
+<body class="min-h-screen bg-term-bg text-term-text flex items-center justify-center p-4">
+
+  <main class="w-full max-w-2xl">
+
+    <!-- Terminal Window -->
+    <div class="terminal-flat bg-term-panel border border-term-border rounded-xl overflow-hidden reveal" style="animation-delay: 0.2s;">
+
+      <!-- Title Bar -->
+      <div class="bg-term-bg border-b border-term-border px-4 py-3 flex items-center gap-2">
+        <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+        <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+        <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+        <span class="ml-3 text-[11px] text-term-muted">softclick.io — bash</span>
+      </div>
+
+      <div class="p-6 sm:p-8 font-mono text-sm leading-relaxed">
+
+        <!-- Typewriter Command 1 -->
+        <div class="reveal" style="animation-delay: 0.5s;">
+          <span class="text-term-blue">$</span>
+          <span class="ml-1.5 text-term-blueLight" id="cmd1"></span><span class="text-term-blueLight" id="cursor1">_</span>
+        </div>
+
+        <!-- Response 1 -->
+        <div class="mt-3 space-y-1" id="resp1" style="opacity: 0;">
+          <p class="text-term-muted">Checking system status...</p>
+          <p><span class="text-term-green">[OK]</span> API servers running</p>
+          <p><span class="text-term-green">[OK]</span> Database connected</p>
+          <p><span class="text-term-amber">[WARN]</span> Website launch pending</p>
+        </div>
+
+        <!-- Typewriter Command 2 -->
+        <div class="mt-5 reveal" style="animation-delay: 0s;" id="cmd2-wrap">
+          <span class="text-term-blue">$</span>
+          <span class="ml-1.5 text-term-blueLight" id="cmd2"></span><span class="text-term-blueLight" id="cursor2">_</span>
+        </div>
+
+        <!-- Response 2: The Message -->
+        <div class="mt-4 border border-term-border rounded-lg p-5 sm:p-6 bg-term-bg/50" id="resp2" style="opacity: 0;">
+          <h1 class="text-2xl sm:text-3xl font-bold text-term-text mb-2">
+            SoftClick Solutions
+          </h1>
+          <p class="text-term-blueLight text-base sm:text-lg font-medium mb-3">
+            Something big is being built here.
+          </p>
+          <p class="text-term-muted leading-relaxed">
+            We are a technology company crafting solutions that make businesses run smarter.
+            Our new website is under construction. Check back soon.
+          </p>
+        </div>
+
+        <!-- Typewriter Command 3 -->
+        <div class="mt-5" id="cmd3-wrap" style="opacity: 0;">
+          <span class="text-term-blue">$</span>
+          <span class="ml-1.5 text-term-muted" id="cmd3"></span><span class="text-term-muted" id="cursor3">_</span>
+        </div>
+
+        <!-- Countdown -->
+        <div class="mt-4" id="countdown-wrap" style="opacity: 0;">
+          <div class="grid grid-cols-4 gap-3">
+            <div class="border border-term-border rounded-lg p-3 sm:p-4 text-center bg-term-bg/30 slide-up" style="animation-delay: 0s;">
+              <div class="text-2xl sm:text-3xl font-bold text-term-text tabular-nums" id="days">00</div>
+              <div class="text-[10px] text-term-muted uppercase tracking-widest mt-1">days</div>
+            </div>
+            <div class="border border-term-border rounded-lg p-3 sm:p-4 text-center bg-term-bg/30 slide-up" style="animation-delay: 0.1s;">
+              <div class="text-2xl sm:text-3xl font-bold text-term-text tabular-nums" id="hours">00</div>
+              <div class="text-[10px] text-term-muted uppercase tracking-widest mt-1">hours</div>
+            </div>
+            <div class="border border-term-border rounded-lg p-3 sm:p-4 text-center bg-term-bg/30 slide-up" style="animation-delay: 0.2s;">
+              <div class="text-2xl sm:text-3xl font-bold text-term-text tabular-nums" id="minutes">00</div>
+              <div class="text-[10px] text-term-muted uppercase tracking-widest mt-1">mins</div>
+            </div>
+            <div class="border border-term-border rounded-lg p-3 sm:p-4 text-center bg-term-bg/30 slide-up" style="animation-delay: 0.3s;">
+              <div class="text-2xl sm:text-3xl font-bold text-term-blueLight tabular-nums" id="seconds">00</div>
+              <div class="text-[10px] text-term-muted uppercase tracking-widest mt-1">secs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Final Prompt -->
+        <div class="mt-6" id="final-prompt" style="opacity: 0;">
+          <span class="text-term-blue">$</span>
+          <span class="text-term-muted ml-1.5">_</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Links -->
+    <div class="flex justify-center gap-3 mt-6 reveal" style="animation-delay: 0s;" id="socials">
+      <a href="#" class="text-term-muted hover:text-term-blueLight transition text-xs font-mono border border-term-border px-3 py-1.5 rounded hover:border-term-blue/40">
+        x.com/softclick
+      </a>
+      <a href="#" class="text-term-muted hover:text-term-blueLight transition text-xs font-mono border border-term-border px-3 py-1.5 rounded hover:border-term-blue/40">
+        linkedin/softclick
+      </a>
+      <a href="#" class="text-term-muted hover:text-term-blueLight transition text-xs font-mono border border-term-border px-3 py-1.5 rounded hover:border-term-blue/40">
+        github/softclick
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <p class="text-center text-term-muted/50 text-[10px] font-mono mt-6" id="footer" style="opacity: 0;">
+      &copy; <span id="year"></span> SoftClick Solutions Ltd. All rights reserved.
+    </p>
+  </main>
+
+  <script>
+    // Typewriter utility
+    function typeWriter(elementId, text, speed = 50) {
+      return new Promise(resolve => {
+        const el = document.getElementById(elementId);
+        let i = 0;
+        el.textContent = '';
+        function type() {
+          if (i < text.length) {
+            el.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+          } else {
+            resolve();
+          }
+        }
+        type();
+      });
+    }
+
+    function showElement(id, delay = 0) {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) {
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+          }
+          resolve();
+        }, delay);
+      });
+    }
+
+    function hideCursor(id) {
+      const el = document.getElementById(id);
+      if (el) el.style.opacity = '0';
+    }
+
+    // Sequenced animations
+    async function runSequence() {
+      // Step 1: Type first command
+      await typeWriter('cmd1', 'softclick status', 55);
+      await new Promise(r => setTimeout(r, 300));
+      hideCursor('cursor1');
+
+      // Step 2: Show response
+      await showElement('resp1', 200);
+      await new Promise(r => setTimeout(r, 900));
+
+      // Step 3: Type second command
+      document.getElementById('cmd2-wrap').style.opacity = '1';
+      await typeWriter('cmd2', 'cat message.txt', 50);
+      await new Promise(r => setTimeout(r, 300));
+      hideCursor('cursor2');
+
+      // Step 4: Show message box
+      await showElement('resp2', 200);
+      await new Promise(r => setTimeout(r, 1200));
+
+      // Step 5: Type third command
+      document.getElementById('cmd3-wrap').style.opacity = '1';
+      await typeWriter('cmd3', 'countdown --launch', 45);
+      await new Promise(r => setTimeout(r, 300));
+      hideCursor('cursor3');
+
+      // Step 6: Show countdown
+      document.getElementById('countdown-wrap').style.opacity = '1';
+      await new Promise(r => setTimeout(r, 600));
+
+      // Step 7: Show final prompt
+      await showElement('final-prompt', 300);
+      await new Promise(r => setTimeout(r, 400));
+
+      // Step 8: Show socials and footer
+      document.getElementById('socials').style.animationDelay = '0s';
+      document.getElementById('socials').classList.add('reveal');
+      await showElement('footer', 300);
+    }
+
+    // Start sequence after brief delay
+    setTimeout(runSequence, 400);
+
+    // Countdown
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 30);
+    let prev = { days: '00', hours: '00', minutes: '00', seconds: '00' };
+
+    function updateCountdown() {
+      const dist = targetDate - Date.now();
+      const d = String(Math.floor(dist / 86400000)).padStart(2, '0');
+      const h = String(Math.floor((dist % 86400000) / 3600000)).padStart(2, '0');
+      const m = String(Math.floor((dist % 3600000) / 60000)).padStart(2, '0');
+      const s = String(Math.floor((dist % 60000) / 1000)).padStart(2, '0');
+
+      [['days', d], ['hours', h], ['minutes', m], ['seconds', s]].forEach(([id, v]) => {
+        const el = document.getElementById(id);
+        if (v !== prev[id]) {
+          el.textContent = v;
+          el.classList.remove('flip-change');
+          void el.offsetWidth;
+          el.classList.add('flip-change');
+          prev[id] = v;
+        }
+      });
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
